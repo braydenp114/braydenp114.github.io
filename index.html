@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brayden Pearce — Aspiring Solutions Architect</title>
-  <meta name="description" content="Second-year CS student at AUT. Aspiring Solutions Architect building at the intersection of software, cloud, and business." />
+  <title>Brayden Pearce — Software Engineer</title>
+  <meta name="description" content="Second-year CS student at AUT. Aspiring Solutions Architect with a focus on software, AI, and cloud technology." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -28,6 +28,8 @@
       --green-bg: #ecfdf3;
       --amber: #92400e;
       --amber-bg: #fffbeb;
+      --purple: #5b21b6;
+      --purple-bg: #f5f3ff;
       --radius: 14px;
       --radius-sm: 8px;
       --radius-pill: 999px;
@@ -51,6 +53,8 @@
         --green-bg: #022c22;
         --amber: #fbbf24;
         --amber-bg: #1c1506;
+        --purple: #a78bfa;
+        --purple-bg: #1e1340;
       }
     }
 
@@ -126,8 +130,28 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 5rem 0 4rem;
+      padding: 4rem 0 3.5rem;
       border-top: none;
+    }
+
+    /* ── CURVED NAME (Thrasher bold + Netflix arc) ── */
+    .hero-name-wrap {
+      width: 100%;
+      max-width: 680px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    .hero-name-text {
+      fill: var(--text);
+      font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+      font-size: 88px;
+      letter-spacing: 4px;
     }
 
     .hero-tag {
@@ -140,7 +164,7 @@
       background: var(--blue-bg);
       padding: 5px 12px;
       border-radius: var(--radius-pill);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       letter-spacing: 0.01em;
     }
 
@@ -158,25 +182,10 @@
       50% { opacity: 0.4; }
     }
 
-    .hero h1 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(36px, 6vw, 54px);
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -1.5px;
-      color: var(--text);
-      margin-bottom: 1.25rem;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--text-mid);
-    }
-
     .hero-desc {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-mid);
-      line-height: 1.75;
+      line-height: 1.7;
       max-width: 540px;
       margin-bottom: 2rem;
       font-weight: 300;
@@ -221,6 +230,43 @@
     }
 
     .btn-secondary:hover { background: var(--accent-bg); }
+
+    /* ── CURRENTLY ── */
+    .currently-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .currently-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .currently-card-icon {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .currently-card-label {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--text-muted);
+    }
+
+    .currently-card-value {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 400;
+      line-height: 1.5;
+    }
 
     /* ── YEAR HEADER ── */
     .year-header {
@@ -341,71 +387,61 @@
       text-transform: uppercase;
     }
 
-    .badge-progress {
-      color: var(--amber);
-      background: var(--amber-bg);
-    }
+    .badge-progress { color: var(--amber); background: var(--amber-bg); }
+    .badge-soon     { color: var(--text-muted); background: var(--accent-bg); }
+    .badge-live     { color: var(--green); background: var(--green-bg); }
+    .badge-grade    { color: var(--purple); background: var(--purple-bg); }
 
-    .badge-soon {
-      color: var(--text-muted);
-      background: var(--accent-bg);
-    }
+    /* ── ACADEMIC ACHIEVEMENTS ── */
+    .academic-list { display: flex; flex-direction: column; gap: 10px; }
 
-    .badge-live {
-      color: var(--green);
-      background: var(--green-bg);
-    }
-
-    /* ── BLOG ── */
-    .blog-list { display: flex; flex-direction: column; }
-
-    .blog-item {
+    .academic-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1.1rem 0;
-      border-bottom: 0.5px solid var(--border);
-      text-decoration: none;
-      cursor: pointer;
-      transition: padding-left 0.15s;
+      gap: 1rem;
+      transition: border-color 0.15s;
     }
 
-    .blog-item:last-child { border-bottom: none; }
-    .blog-item:hover { padding-left: 6px; }
+    .academic-card:hover { border-color: var(--border-mid); }
 
-    .blog-item-left { flex: 1; }
+    .academic-score {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--purple);
+      letter-spacing: -0.5px;
+      flex-shrink: 0;
+      width: 70px;
+      text-align: right;
+    }
 
-    .blog-title {
+    .academic-divider {
+      width: 0.5px;
+      height: 40px;
+      background: var(--border-mid);
+      flex-shrink: 0;
+    }
+
+    .academic-title {
       font-size: 14px;
       font-weight: 500;
       color: var(--text);
       margin-bottom: 3px;
     }
 
-    .blog-meta {
+    .academic-meta {
       font-size: 12px;
       color: var(--text-muted);
+      font-weight: 300;
     }
-
-    .blog-date {
-      font-size: 12px;
-      color: var(--text-muted);
-      white-space: nowrap;
-      margin-left: 1.5rem;
-    }
-
-    .blog-arrow {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-left: 0.75rem;
-      transition: transform 0.15s;
-    }
-
-    .blog-item:hover .blog-arrow { transform: translateX(3px); }
 
     /* ── ABOUT ── */
     .about-intro {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 300;
       color: var(--text-mid);
       line-height: 1.8;
@@ -477,6 +513,49 @@
       color: var(--text);
     }
 
+    /* ── BLOG ── */
+    .blog-list { display: flex; flex-direction: column; }
+
+    .blog-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+      border-bottom: 0.5px solid var(--border);
+      text-decoration: none;
+      cursor: pointer;
+      transition: padding-left 0.15s;
+    }
+
+    .blog-item:last-child { border-bottom: none; }
+    .blog-item:hover { padding-left: 6px; }
+    .blog-item-left { flex: 1; }
+
+    .blog-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .blog-meta { font-size: 12px; color: var(--text-muted); }
+
+    .blog-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      margin-left: 1.5rem;
+    }
+
+    .blog-arrow {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-left: 0.75rem;
+      transition: transform 0.15s;
+    }
+
+    .blog-item:hover .blog-arrow { transform: translateX(3px); }
+
     /* ── WORK EXPERIENCE ── */
     .work-list { display: flex; flex-direction: column; gap: 0; }
 
@@ -540,15 +619,9 @@
       gap: 1rem;
     }
 
-    .footer-left {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
+    .footer-left { font-size: 13px; color: var(--text-muted); }
 
-    .footer-links {
-      display: flex;
-      gap: 1.25rem;
-    }
+    .footer-links { display: flex; gap: 1.25rem; }
 
     .footer-links a {
       font-size: 13px;
@@ -579,6 +652,7 @@
       .nav-links { gap: 1rem; }
       .projects-grid { grid-template-columns: 1fr; }
       .work-item { flex-direction: column; gap: 0.25rem; }
+      .hero-name-text { font-size: 60px; }
     }
   </style>
 </head>
@@ -587,8 +661,8 @@
   <nav>
     <a href="#" class="nav-logo">Brayden Pearce</a>
     <ul class="nav-links">
+      <li><a href="#currently">Now</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#blog">Blog</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="brayden_cv.docx" download>CV</a></li>
     </ul>
@@ -599,15 +673,60 @@
     <!-- HERO -->
     <section class="hero fade-in">
       <div class="hero-tag">Open to internships · 2026</div>
-      <h1>Software engineer<br><em>&amp; aspiring architect.</em></h1>
+
+      <!-- Curved name: Thrasher-style bold font on a Netflix-style arc -->
+      <div class="hero-name-wrap">
+        <svg viewBox="0 0 700 115" preserveAspectRatio="xMidYMid meet" class="hero-name-svg">
+          <defs>
+            <path id="name-arc" d="M 20,95 C 175,30 525,30 680,95"/>
+          </defs>
+          <text text-anchor="middle">
+            <textPath href="#name-arc" startOffset="50%" class="hero-name-text">BRAYDEN PEARCE</textPath>
+          </text>
+        </svg>
+      </div>
+
       <p class="hero-desc">
         Second-year Computer Science student at AUT, majoring in Software Development with a minor in AI &amp; Digital Services.
-        Fijian, Samoan, and Tongan — building technology that bridges Pacific communities, sports, and business.
-        Long-term goal: Solutions Architect on AWS.
+        Fijian, Samoan, and Tongan — building real projects at the intersection of software, sports, and technology.
+        Open to anything — currently leaning toward Solutions Architecture and AI.
       </p>
       <div class="btn-row">
         <a href="#projects" class="btn-primary">View projects</a>
         <a href="brayden_cv.docx" download class="btn-secondary">Download CV</a>
+        <a href="https://github.com/braydenp114" target="_blank" class="btn-secondary">GitHub ↗</a>
+      </div>
+    </section>
+
+    <!-- CURRENTLY -->
+    <section id="currently" class="fade-in">
+      <div class="section-label">Currently</div>
+      <div class="currently-grid">
+
+        <div class="currently-card">
+          <div class="currently-card-icon">🏀</div>
+          <div class="currently-card-label">Building</div>
+          <div class="currently-card-value">CourtVision — live NBA analytics dashboard powered by ESPN's API</div>
+        </div>
+
+        <div class="currently-card">
+          <div class="currently-card-icon">🏐</div>
+          <div class="currently-card-label">Building</div>
+          <div class="currently-card-value">Volleyball Stats Tracker — player and team performance tracking app</div>
+        </div>
+
+        <div class="currently-card">
+          <div class="currently-card-icon">📚</div>
+          <div class="currently-card-label">Studying</div>
+          <div class="currently-card-value">Data Structures &amp; Algorithms · Operating Systems · Year 2 at AUT</div>
+        </div>
+
+        <div class="currently-card">
+          <div class="currently-card-icon">🎯</div>
+          <div class="currently-card-label">Looking for</div>
+          <div class="currently-card-value">Internships &amp; graduate roles in software engineering, cloud, or AI</div>
+        </div>
+
       </div>
     </section>
 
@@ -627,53 +746,35 @@
             <div class="project-card-top">
               <div class="project-icon">🏀</div>
               <div class="project-links">
-                <a href="https://github.com/braydenp114" class="project-link" target="_blank">GitHub ↗</a>
+                <a href="https://github.com/braydenp114/courtvision-" class="project-link" target="_blank">GitHub ↗</a>
               </div>
             </div>
             <span class="badge badge-progress">In progress</span>
-            <p class="project-title">Pacific Pulse — Sports Tracker</p>
-            <p class="project-desc">Web app tracking rugby, league, and basketball results for Pacific nations — Fiji, Samoa, and Tonga. Built because I couldn't find all Pacific team stats in one place.</p>
-            <div class="tag-row">
-              <span class="tag">Python</span>
-              <span class="tag">Flask</span>
-              <span class="tag">REST API</span>
-              <span class="tag">JavaScript</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-top">
-              <div class="project-icon">🎓</div>
-              <div class="project-links">
-                <a href="https://github.com/braydenp114" class="project-link" target="_blank">GitHub ↗</a>
-              </div>
-            </div>
-            <span class="badge badge-progress">In progress</span>
-            <p class="project-title">TūāhuiTaiao — Pacific Language Learning</p>
-            <p class="project-desc">Educational platform teaching basic Fijian, Samoan, and Tongan through quizzes, progress tracking, and a leaderboard. Deployed serverless on AWS.</p>
-            <div class="tag-row">
-              <span class="tag">Java</span>
-              <span class="tag">AWS Lambda</span>
-              <span class="tag">DynamoDB</span>
-              <span class="tag">S3</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-top">
-              <div class="project-icon">🏆</div>
-              <div class="project-links">
-                <a href="https://github.com/braydenp114" class="project-link" target="_blank">GitHub ↗</a>
-              </div>
-            </div>
-            <span class="badge badge-soon">Coming soon</span>
-            <p class="project-title">Basketball Legends Card Collector</p>
-            <p class="project-desc">Browse player cards, filter by stats and team, and build a dream team. Full-stack Java app using a public basketball API with a custom rating engine.</p>
+            <p class="project-title">CourtVision — NBA Analytics Dashboard</p>
+            <p class="project-desc">Live NBA stats dashboard built with Spring Boot and a vanilla JS frontend. Pulls real-time data from ESPN's API — standings, player stats, shot charts, and win predictions. No database needed: the API is the source of truth.</p>
             <div class="tag-row">
               <span class="tag">Java</span>
               <span class="tag">Spring Boot</span>
-              <span class="tag">SQL</span>
-              <span class="tag">REST API</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">ESPN API</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card-top">
+              <div class="project-icon">🏐</div>
+              <div class="project-links">
+                <a href="https://github.com/braydenp114" class="project-link" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
+            <span class="badge badge-progress">In progress</span>
+            <p class="project-title">Volleyball Stats Tracker</p>
+            <p class="project-desc">Player and team performance tracking app for volleyball. Logs match stats, calculates per-set averages, and visualises trends over a season. Built because I play and wanted a tool that actually works for the sport.</p>
+            <div class="tag-row">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML/CSS</span>
             </div>
           </div>
 
@@ -697,7 +798,7 @@
             </div>
             <span class="badge badge-live">Live</span>
             <p class="project-title">NBA Stats API</p>
-            <p class="project-desc">Spring Boot REST API proxying the RapidAPI NBA Stats service. Returns real-time standings and player data. Clean three-layer architecture: Controller → Service → External API.</p>
+            <p class="project-desc">Spring Boot REST API proxying the RapidAPI NBA Stats service. Returns live standings and player data with a clean three-layer architecture: Controller → Service → External API.</p>
             <div class="tag-row">
               <span class="tag">Java</span>
               <span class="tag">Spring Boot</span>
@@ -715,7 +816,7 @@
             </div>
             <span class="badge badge-live">Live</span>
             <p class="project-title">Data Analysis Report</p>
-            <p class="project-desc">End-to-end data analysis using Python and Jupyter. Cleaned raw datasets, performed exploratory analysis, and produced a written report with visualisations.</p>
+            <p class="project-desc">End-to-end data analysis using Python and Jupyter. Cleaned raw datasets, performed exploratory analysis, and produced a written report with visualisations using Pandas and Matplotlib.</p>
             <div class="tag-row">
               <span class="tag">Python</span>
               <span class="tag">Jupyter</span>
@@ -733,7 +834,7 @@
             </div>
             <span class="badge badge-live">Live</span>
             <p class="project-title">Group Website — KahuKonnect</p>
-            <p class="project-desc">Collaborative group project building a full website. Covered semantic HTML, CSS layout, and responsive design working as a team of two.</p>
+            <p class="project-desc">Collaborative group project building a full website — semantic HTML, CSS layout, and responsive design working as a team. First real experience coordinating code across people.</p>
             <div class="tag-row">
               <span class="tag">HTML</span>
               <span class="tag">CSS</span>
@@ -751,7 +852,7 @@
             </div>
             <span class="badge badge-live">Live</span>
             <p class="project-title">Java Game Projects</p>
-            <p class="project-desc">Multiple small games applying core OOP principles — game loops, collision detection, entity state management, and object inheritance in Java.</p>
+            <p class="project-desc">Multiple small games applying core OOP principles — game loops, collision detection, entity state management, and object inheritance. Good foundation for understanding how software systems interact.</p>
             <div class="tag-row">
               <span class="tag">Java</span>
               <span class="tag">OOP</span>
@@ -763,15 +864,104 @@
       </div>
     </section>
 
+    <!-- ACADEMIC -->
+    <section id="academic" class="fade-in">
+      <div class="section-label">Academic Highlights</div>
+      <div class="academic-list">
+
+        <div class="academic-card">
+          <div class="academic-score">100</div>
+          <div class="academic-divider"></div>
+          <div>
+            <div class="academic-title">Data Structures &amp; Algorithms Assignment</div>
+            <div class="academic-meta">AUT · 2026 · Full marks — implementation of core DSA concepts in Java</div>
+          </div>
+        </div>
+
+        <div class="academic-card">
+          <div class="academic-score">90</div>
+          <div class="academic-divider"></div>
+          <div>
+            <div class="academic-title">Operating Systems Assignment</div>
+            <div class="academic-meta">AUT · 2026 · Process scheduling, memory management, and systems programming in C</div>
+          </div>
+        </div>
+
+        <div class="academic-card">
+          <div class="academic-score">6.0</div>
+          <div class="academic-divider"></div>
+          <div>
+            <div class="academic-title">Current GPA</div>
+            <div class="academic-meta">AUT · BSc Computer Science · Major: Software Development · Minor: AI &amp; Digital Services</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="fade-in">
+      <div class="section-label">About</div>
+      <p class="about-intro">
+        I'm a second-year CS student at AUT — Fijian, Samoan, and Tongan. I want to build technology that
+        actually makes sense for the people using it, not just what looks good in a pitch deck.
+        <br><br>
+        Long-term I'm drawn to Solutions Architecture — designing systems end-to-end, not just writing code.
+        But I'm genuinely open to wherever the work takes me. AI and intelligent systems are something I'm
+        increasingly excited about.
+        <br><br>
+        Outside of the screen: I play basketball, volleyball, golf, and football — basically every sport going.
+        Doing things around the clock has built real communication and leadership skills that you can't pick up
+        just by sitting at a desk. I've led teams, read rooms, and kept things moving under pressure.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-label">Currently studying</div>
+          <div class="about-card-value">BSc Computer Science · AUT · Year 2<br>Major: Software Development<br>Minor: AI &amp; Digital Services</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Goal</div>
+          <div class="about-card-value">Solutions Architect or software engineer role — open to anything interesting, especially in AI, cloud, or product engineering.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Sports &amp; life</div>
+          <div class="about-card-value">Basketball · Volleyball · Golf · Football. Always competing, always building. Leadership you can't fake.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Communities</div>
+          <div class="about-card-value">AUT MAPS (Māori &amp; Pasifika in Tech) · AUT CSEA · Web Dev &amp; Consulting Club</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 0.75rem;">
+        <div class="section-label" style="margin-bottom: 0.75rem;">Languages &amp; Tools</div>
+        <div class="skills-row">
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">HTML / CSS</span>
+          <span class="skill-pill">C</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">Spring Boot</span>
+          <span class="skill-pill">Maven</span>
+          <span class="skill-pill">Git</span>
+          <span class="skill-pill">REST APIs</span>
+          <span class="skill-pill">IntelliJ IDEA</span>
+          <span class="skill-pill">VS Code</span>
+        </div>
+      </div>
+    </section>
+
     <!-- BLOG -->
     <section id="blog" class="fade-in">
-      <div class="section-label">Blog</div>
+      <div class="section-label">Writing</div>
       <div class="blog-list">
 
         <div class="blog-item">
           <div class="blog-item-left">
             <p class="blog-title">Why I want to become a Solutions Architect</p>
-            <p class="blog-meta">Career · Goals · AWS</p>
+            <p class="blog-meta">Career · Goals · Cloud</p>
           </div>
           <span class="blog-date">Mar 2026</span>
           <span class="blog-arrow">→</span>
@@ -780,7 +970,7 @@
         <div class="blog-item">
           <div class="blog-item-left">
             <p class="blog-title">Building a REST API with Spring Boot from scratch</p>
-            <p class="blog-meta">Java · Spring Boot · NBA Stats project</p>
+            <p class="blog-meta">Java · Spring Boot · CourtVision project</p>
           </div>
           <span class="blog-date">Nov 2025</span>
           <span class="blog-arrow">→</span>
@@ -807,54 +997,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="fade-in">
-      <div class="section-label">About</div>
-      <p class="about-intro">
-        I'm a second-year Computer Science student at AUT with a GPA of 6.0, majoring in Software Development
-        and minoring in AI &amp; Digital Services. I'm Fijian, Samoan, and Tongan — and I want to build technology
-        that's relevant to Pacific communities, not just imported from overseas.
-        <br><br>
-        My long-term goal is to become a Solutions Architect on AWS — combining deep engineering knowledge
-        with business, finance, and marketing awareness to design systems that solve real problems end-to-end.
-      </p>
-
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-card-label">Currently studying</div>
-          <div class="about-card-value">BSc Computer Science · AUT · Year 2<br>Major: Software Development<br>Minor: AI &amp; Digital Services</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-label">Goal</div>
-          <div class="about-card-value">AWS Solutions Architect — designing end-to-end cloud systems at the intersection of engineering, business, and finance.</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-label">Communities</div>
-          <div class="about-card-value">AUT MAPS (Māori &amp; Pasifika in Tech) · AUT CSEA · UOA Devs · UOACS · Web Dev &amp; Consulting Club</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-label">GPA</div>
-          <div class="about-card-value"><span class="gpa-value">6.0</span><br><span style="font-size:12px; color: var(--text-muted);">Auckland University of Technology</span></div>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 0.75rem;">
-        <div class="section-label" style="margin-bottom: 0.75rem;">Technical skills</div>
-        <div class="skills-row">
-          <span class="skill-pill">Java</span>
-          <span class="skill-pill">Spring Boot</span>
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">C</span>
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">HTML / CSS</span>
-          <span class="skill-pill">JavaScript</span>
-          <span class="skill-pill">Git</span>
-          <span class="skill-pill">AWS (learning)</span>
-          <span class="skill-pill">REST APIs</span>
-        </div>
-      </div>
-    </section>
-
     <!-- WORK EXPERIENCE -->
     <section id="work" class="fade-in">
       <div class="section-label">Work Experience</div>
@@ -865,7 +1007,7 @@
           <div class="work-content">
             <p class="work-title">Team Member</p>
             <p class="work-company">Woolworths · Auckland, NZ</p>
-            <p class="work-desc">Delivered consistent customer service over 3+ years. Developed strong communication and time-management skills balancing work alongside full-time study. Exposure to inventory management and operational workflows at scale.</p>
+            <p class="work-desc">3+ years balancing work with full-time study. Built genuine communication and time-management skills in a fast-moving customer environment. Exposure to inventory, team operations, and working well under pressure.</p>
           </div>
           <span class="work-date">2022 – Present</span>
         </div>
@@ -875,7 +1017,7 @@
           <div class="work-content">
             <p class="work-title">Seasonal Staff</p>
             <p class="work-company">Coullit Ice · Auckland, NZ</p>
-            <p class="work-desc">Demonstrated reliability and adaptability in a fast-moving environment across multiple summer seasons.</p>
+            <p class="work-desc">Reliable and adaptable across multiple summer seasons in a high-turnover, customer-facing role.</p>
           </div>
           <span class="work-date">Summers 2022 – Present</span>
         </div>
