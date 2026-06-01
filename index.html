@@ -1,731 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brayden — Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brayden Pearce — Software Engineer</title>
+  <meta name="description" content="Second-year CS student at AUT. Building backend systems, hardware projects and exploring game dev." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      border-radius: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --orange: #ff5500;
-      --orange-glow: rgba(255, 85, 0, 0.45);
-      --black: #000;
-      --off-black: #0c0c0c;
-      --card: #101010;
-      --border: #1f1f1f;
-      --white: #ffffff;
-      --grey: #888;
-      --light-grey: #bbb;
+      --bg-dark: #0f0f0f;
+      --bg-glass: rgba(25, 25, 25, 0.65);
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --text-primary: #f8f8f8;
+      --text-secondary: #c0c0c0;
+      --text-muted: #8a8a8a;
+      --accent: #f97316;
+      --accent-glow: rgba(249, 115, 22, 0.4);
+      --card-blur: 20px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
     }
 
-    html { scroll-behavior: auto; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Arial, sans-serif;
-      background: var(--black);
-      color: var(--white);
-      min-height: 100vh;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-dark);
+      background-image: radial-gradient(circle at 20% 30%, rgba(249, 115, 22, 0.08) 0%, rgba(0,0,0,0) 50%);
+      color: var(--text-primary);
+      font-size: 17px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ===================== HEADER ===================== */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 62px;
-      background: #000;
-      border-bottom: 1px solid var(--border);
+    /* Navbar - Liquid Glass Effect */
+    .navbar {
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      padding: 0.85rem 2rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
+      border: 1px solid var(--border-glass);
+      border-radius: 60px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 0 48px;
-      z-index: 999;
-    }
-
-    .h-left { width: 260px; }
-
-    .h-title {
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      color: var(--white);
-      text-align: center;
-      flex: 1;
-    }
-
-    nav {
-      display: flex;
-      gap: 4px;
-      width: 260px;
-      justify-content: flex-end;
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-      padding: 10px 14px;
-      cursor: pointer;
-      position: relative;
-    }
-
-    nav button::after {
-      content: '';
-      position: absolute;
-      bottom: 6px;
-      left: 14px;
-      right: 14px;
-      height: 1px;
-      background: var(--orange);
-      transform: scaleX(0);
-      transition: transform 0.15s ease;
-    }
-
-    nav button:hover { color: var(--white); }
-    nav button:hover::after { transform: scaleX(1); }
-    nav button.active { color: var(--white); }
-    nav button.active::after { transform: scaleX(1); }
-
-    /* ===================== PAGES ===================== */
-    .page { display: none; min-height: 100vh; }
-    .page.active { display: block; }
-
-    /* ===================== HOME ===================== */
-    #home.active {
-      display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding-top: 62px;
-      min-height: 100vh;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 24px;
-    }
-
-    .orb {
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle at 42% 40%,
-        #fff5cc 0%,
-        #ffcc00 12%,
-        #ff7700 35%,
-        #cc3300 62%,
-        #550000 82%,
-        #000 100%
-      );
-      box-shadow:
-        0 0 50px 20px rgba(255, 110, 0, 0.6),
-        0 0 110px 55px rgba(255, 80, 0, 0.28),
-        0 0 200px 90px rgba(200, 50, 0, 0.12);
-      margin-bottom: 56px;
-      flex-shrink: 0;
-    }
-
-    .hero-name {
-      font-size: clamp(60px, 9vw, 96px);
-      font-weight: 900;
-      letter-spacing: 10px;
-      text-transform: uppercase;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 18px;
-    }
-
-    .hero-role {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 48px;
-    }
-
-    .hero-btns { display: flex; gap: 10px; }
-
-    .btn-solid {
-      background: var(--white);
-      color: var(--black);
-      border: none;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 14px 36px;
-      cursor: pointer;
-    }
-    .btn-solid:hover { background: var(--orange); color: var(--white); }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid #333;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 14px 36px;
-      cursor: pointer;
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #fff, #f97316);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
     }
-    .btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
 
-    .hero-bar {
-      margin-top: 80px;
-      width: 100%;
-      max-width: 680px;
-      border-top: 1px solid var(--border);
+    .nav-links {
       display: flex;
-      justify-content: center;
-      gap: 60px;
-      padding-top: 28px;
+      gap: 2rem;
+      list-style: none;
     }
 
-    .hero-stat { text-align: center; }
-
-    .hero-stat-num {
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: 1px;
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .hero-stat-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-top: 4px;
-    }
+    .nav-links a:hover { color: var(--accent); }
 
-    /* ===================== INNER LAYOUT ===================== */
-    .page-wrap {
-      max-width: 1000px;
+    /* Main Container */
+    .container {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 80px 48px 100px;
+      padding: 0 2rem;
     }
 
-    .page-header { margin-bottom: 56px; }
+    section {
+      padding: 5rem 0;
+    }
 
-    .page-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 4px;
+    /* Section Headers */
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 14px;
+      color: var(--accent);
+      margin-bottom: 2rem;
     }
 
-    .page-title {
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--white);
-      line-height: 1;
+    /* Hero Section */
+    .hero {
+      padding: 3rem 0 1rem 0;
+      text-align: left;
     }
 
-    /* ===================== ABOUT ===================== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 64px;
-      align-items: start;
+    .availability {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 500;
     }
 
-    .about-bio p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--light-grey);
-      margin-bottom: 22px;
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
     }
 
-    .about-bio p strong { color: var(--white); font-weight: 700; }
-
-    .currently {
-      margin-top: 36px;
-      padding: 24px;
-      background: var(--card);
-      border-left: 3px solid var(--orange);
+    .hero h1 i {
+      font-style: italic;
+      color: var(--text-secondary);
+      font-weight: 400;
     }
 
-    .currently-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 10px;
-    }
-
-    .currently p {
-      font-size: 14px;
-      color: var(--light-grey);
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
       line-height: 1.6;
+      max-width: 75%;
+      margin-bottom: 2rem;
     }
 
-    .about-sidebar-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 16px;
-    }
-
-    .skills-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
-
-    .skill-row {
+    .btn-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 12px 16px;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
-    .skill-name {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--white);
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
 
-    .skill-level {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--grey);
+    .btn-primary:hover {
+      background: #ea580c;
+      transform: scale(1.02);
     }
 
-    .skill-level.active-skill { color: var(--orange); }
-
-    /* ===================== PROJECTS ===================== */
-    .projects-list { display: flex; flex-direction: column; gap: 2px; }
-
-    .project-row {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--border);
-      display: grid;
-      grid-template-columns: 80px 1fr auto;
-      align-items: center;
-      padding: 32px 32px 32px 28px;
-      gap: 32px;
-    }
-
-    .project-row:hover {
-      border-left-color: var(--orange);
-      background: #121212;
-    }
-
-    .project-num {
-      font-size: 36px;
-      font-weight: 900;
-      color: var(--border);
-      line-height: 1;
-    }
-
-    .project-row:hover .project-num { color: var(--orange); }
-
-    .project-info h3 {
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-
-    .project-info p {
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--grey);
-      margin-bottom: 14px;
-    }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-
-    .tag {
-      background: var(--off-black);
-      border: 1px solid #252525;
-      color: #666;
-      padding: 4px 10px;
-      font-size: 10px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .project-action { flex-shrink: 0; }
-
-    .btn-project {
-      display: inline-block;
+    .btn-secondary {
       background: transparent;
-      color: var(--white);
-      border: 1px solid #2a2a2a;
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 10px 20px;
+      color: white;
+      border: 1px solid var(--border-glass);
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
       text-decoration: none;
-      white-space: nowrap;
+      transition: all 0.2s ease;
     }
 
-    .btn-project:hover {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: var(--white);
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: var(--accent);
     }
 
-    .project-row.wip { opacity: 0.45; }
-
-    /* ===================== CONTACT ===================== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 80px;
-      align-items: start;
+    /* Project Cards - Glassmorphism */
+    .project-card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(var(--card-blur)) saturate(180%);
+      -webkit-backdrop-filter: blur(var(--card-blur)) saturate(180%);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: transform 0.25s ease, border-color 0.2s;
+      margin-bottom: 2rem;
     }
 
-    .contact-form-title {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 28px;
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
     }
 
-    .form-row { margin-bottom: 18px; }
-
-    label {
-      display: block;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 8px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--white);
-      padding: 13px 16px;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
-      outline: none;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus { border-color: var(--orange); }
-
-    textarea { height: 140px; resize: vertical; }
-
-    .contact-sidebar-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 16px;
-    }
-
-    .contact-link-row { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
-
-    .contact-link {
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--light-grey);
-      padding: 16px 20px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-decoration: none;
+    .project-header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
     }
 
-    .contact-link:hover { border-color: var(--orange); color: var(--white); }
-    .contact-link-arrow { color: var(--grey); font-size: 16px; }
-    .contact-link:hover .contact-link-arrow { color: var(--orange); }
-
-    .availability-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--orange);
-      padding: 20px;
-      margin-top: 28px;
+    .project-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .avail-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 8px;
+    .status {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 40px;
     }
 
-    .avail-text { font-size: 13px; color: var(--grey); line-height: 1.6; }
+    .status-active { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
+    .status-learning { background: rgba(249, 115, 22, 0.2); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
 
-    /* ===================== FOOTER ===================== */
+    .project-tech {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+
+    .tech-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 40px;
+      color: var(--text-muted);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .project-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* About & Work Cards */
+    .about-card, .work-item {
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      border: 1px solid var(--border-glass);
+    }
+
+    .skills-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.05);
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .skill:hover {
+      background: var(--accent);
+      color: black;
+    }
+
     footer {
-      border-top: 1px solid var(--border);
-      padding: 20px 48px;
+      border-top: 1px solid var(--border-glass);
+      padding: 2rem 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
-    .footer-name {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #333;
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 2rem;
     }
 
-    .footer-copy { font-size: 11px; color: #2a2a2a; letter-spacing: 1px; }
+    /* Fade In Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 700px) {
+      .container { padding: 0 1.2rem; }
+      .navbar { margin: 1rem; padding: 0.8rem 1.2rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero-desc { max-width: 100%; }
+      .project-title { font-size: 1.4rem; }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="h-left"></div>
-  <div class="h-title">Brayden</div>
-  <nav>
-    <button onclick="show('home',this)" class="active">Home</button>
-    <button onclick="show('about',this)">About</button>
-    <button onclick="show('projects',this)">Projects</button>
-    <button onclick="show('contact',this)">Contact</button>
-  </nav>
-</header>
-
-<!-- HOME -->
-<section id="home" class="page active">
-  <div class="hero">
-    <div class="orb"></div>
-    <div class="hero-name">Brayden</div>
-    <div class="hero-role">Software Developer</div>
-    <div class="hero-btns">
-      <button class="btn-solid" onclick="show('projects', document.querySelectorAll('nav button')[2])">View My Work</button>
-      <a href="https://github.com/braydenp114" target="_blank" class="btn-ghost">GitHub</a>
-    </div>
-    <div class="hero-bar">
-      <div class="hero-stat">
-        <div class="hero-stat-num">2+</div>
-        <div class="hero-stat-label">Projects Built</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">9</div>
-        <div class="hero-stat-label">Technologies</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">Full</div>
-        <div class="hero-stat-label">Stack Focus</div>
-      </div>
-    </div>
+  <div class="navbar">
+    <a href="#" class="nav-logo">Brayden Pearce</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#extracurricular">Extracurricular</a></li>
+      <li><a href="brayden_cv.pdf" download>CV</a></li>
+    </ul>
   </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about" class="page">
-  <div class="page-wrap" style="padding-top: 110px;">
-    <div class="page-header">
-      <div class="page-label">Who I Am</div>
-      <div class="page-title">About</div>
-    </div>
-    <div class="about-grid">
-      <div class="about-bio">
-        <p>I'm <strong>Brayden</strong>, a student working towards a solutions architect path. I'm actively learning to build things that I personally find interesting and relevant to my future.</p>
-        <p>My focus is getting real experience across the whole stack by building projects entirely using modern technologies.</p>
-        <p>I care about writing code that's aesthetically clean and readable both front and back end, not just rough code that works.</p>
-        <div class="currently">
-          <div class="currently-label">Currently</div>
-          <p>Working through software development and engineering curriculum at AUT. I'm learning core concepts of Operating Systems, Data Structures & Algorithims and building projects.</p>
+  <div class="container">
+
+    <section class="hero fade-in">
+      <div class="availability">Actively seeking internships for 2026</div>
+      <h1>Brayden Pearce<br><i>Software Engineering</i></h1>
+      <p class="hero-desc">
+        Second-year CS student at AUT. Building a strong foundation in full-stack development and business analysis with a long-term goal in solutions architecture.
+      </p>
+      <div class="btn-row">
+        <a href="#projects" class="btn-primary">View my work</a>
+        <a href="brayden_cv.pdf" download class="btn-secondary">Download CV</a>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in">
+      <div class="section-label">Featured Projects</div>
+
+      <!-- NBA Stats API / CourtVision -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">NBA Stats API — CourtVision</div>
+          <div class="status status-active">In Progress · 2026</div>
+        </div>
+        <p><strong>The Problem:</strong> Most NBA stat sites make player comparisons unnecessarily cumbersome with too many page loads, inconsistent data formats and no clean API layer to build on top of.</p>
+        <p style="margin-top:0.75rem"><strong>My Approach:</strong> Built a REST API using Java and Spring Boot that integrates with the API-NBA endpoint to serve live standings, team statistics and head-to-head player comparisons. The backend handles data normalisation, response caching to respect API rate limits and graceful fallback for missing fields across different endpoints.</p>
+        <p style="margin-top:0.75rem"><strong>Challenges:</strong> The API-NBA data isn't structured for direct comparison — player IDs need matching across endpoints and certain stat categories are inconsistently populated depending on the season. Writing custom mapping logic to handle these cases cleanly was the core engineering problem.</p>
+        <p style="margin-top:0.75rem"><strong>What's next:</strong> A team comparison dashboard and a weighted "GOAT score" feature that lets you define which stats matter most to you.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">REST API Design</span>
+          <span class="tech-tag">API-NBA</span>
+          <span class="tech-tag">Caching</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/braydenp114" class="project-link">View GitHub →</a>
         </div>
       </div>
-      <div class="about-sidebar">
-        <div class="about-sidebar-label">Technical Skills</div>
-        <div class="skills-list">
-          <div class="skill-row"><span class="skill-name">HTML / CSS</span><span class="skill-level active-skill">Active</span></div>
-          <div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-level active-skill">Active</span></div>
-          <div class="skill-row"><span class="skill-name">Java</span><span class="skill-level active-skill">Active</span></div>
-          <div class="skill-row"><span class="skill-name">Spring Boot</span><span class="skill-level active-skill">Active</span></div>
-          <div class="skill-row"><span class="skill-name">React</span><span class="skill-level">Learning</span></div>
-          <div class="skill-row"><span class="skill-name">Node.js</span><span class="skill-level">Learning</span></div>
-          <div class="skill-row"><span class="skill-name">SQL</span><span class="skill-level">Learning</span></div>
-          <div class="skill-row"><span class="skill-name">Git</span><span class="skill-level active-skill">Active</span></div>
+
+      <!-- Personal Portfolio Website -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">Personal Portfolio Website</div>
+          <div class="status status-active">Completed · 2026</div>
+        </div>
+        <p><strong>Overview:</strong> Designed and built this site from scratch using HTML, CSS, and JavaScript with no frameworks or templates. The goal was to make unique design and layout decision, building a consistent visual system. Every design decision was deliberate meaning no templates, just references turned into something original.</p>
+        <p style="margin-top:0.75rem"><strong>Technical focus:</strong> CSS custom properties for a consistent design system, glassmorphism effects using <code>backdrop-filter</code>, an Intersection Observer for scroll-triggered animations and fully responsive layout from mobile up. Cross-browser compatibility was tested throughout.</p>
+        <p style="margin-top:0.75rem"><strong>Outcome:</strong> A clean, fast and smooth portfolio that reflects how I approach UI. Aesthetically pleasing, intentional, minimal and maintainable.</p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Responsive Design</span>
+          <span class="tech-tag">Intersection Observer API</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/braydenp114" class="project-link">View GitHub →</a>
         </div>
       </div>
-    </div>
+
+      <!-- TCS34725 RGB Colour Sensor -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">TCS34725 RGB Colour Sensor</div>
+          <div class="status status-active">High School · 2022</div>
+        </div>
+        <p><strong>Overview:</strong> Programmed an Arduino to interface with the TCS34725 colour sensor over I2C using the Wire.h library. The sensor reads real-time RGB values and outputs them to the Serial Monitor as objects are presented to it.</p>
+        <p style="margin-top:0.75rem"><strong>Technical challenge:</strong> Ambient light introduced significant noise into the readings. I learned to calibrate the sensor establishing a baseline, adjusting integration time and leveraging the built-in IR filter. I was able to get reliable, repeatable results as blue returned roughly R24, G64, B155; green R67, G111, B80; red R145, G42, B38.</p>
+        <p style="margin-top:0.75rem"><strong>What I took from it:</strong> A practical understanding of low-level hardware communication, sensor calibration and how software and physical components interact. Fundamentals that still inform how I think about systems.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Arduino (C++)</span>
+          <span class="tech-tag">I2C / Wire.h</span>
+          <span class="tech-tag">Sensor Calibration</span>
+          <span class="tech-tag">Embedded Systems</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Watch Demo Video →</a>
+        </div>
+      </div>
+
+      <!-- 2D Volleyball Game -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">2D Volleyball Game</div>
+          <div class="status status-learning">In Development</div>
+        </div>
+        <p><strong>Goal:</strong> Build a browser-based 2D game in vanilla JavaScript to develop a solid understanding of game loops, physics and rendering from first principles.</p>
+        <p style="margin-top:0.75rem"><strong>Current state:</strong> Core limb and ball physics are working: collision detection, velocity and angle-based reflection. Currently iterating on a jump and spike mechanic that needs to feel natural before I move on.</p>
+        <p style="margin-top:0.75rem"><strong>What I'm developing:</strong> <code>requestAnimationFrame</code> for frame-rate-independent animation, separating game logic from the render loop and the vector maths behind 2D collision response. Each problem I solve here feeds directly into how I reason about state and timing in backend systems too.</p>
+        <div class="project-tech">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">HTML Canvas</span>
+          <span class="tech-tag">Game Physics</span>
+          <span class="tech-tag">requestAnimationFrame</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Play Alpha Demo →</a>
+          <a href="https://github.com/braydenp114" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- Bionic Integration Group Project -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">Bionic Integration: Ethics &amp; Opportunity</div>
+          <div class="status status-active">Completed · Team Project</div>
+        </div>
+        <p><strong>Context:</strong> A team research project for my Technology in Society class. We investigated bionic integration as an emerging technology weighing both its technical feasibility and its broader societal implications.</p>
+        <p style="margin-top:0.75rem"><strong>My contribution:</strong> Built the team's HTML/CSS presentation website and led the research into the technical architecture of modern bionic limbs, focusing on the data privacy implications of prosthetics that collect continuous usage data.</p>
+        <p style="margin-top:0.75rem"><strong>Collaboration:</strong> My first real multi-person Git workflow. We worked through merge conflicts early on and established a feature-branch process that kept things clean for the rest of the project. The technical depth of our research was recognised with a top grade.</p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML5 &amp; CSS3</span>
+          <span class="tech-tag">Git Collaboration</span>
+          <span class="tech-tag">Technical Research</span>
+          <span class="tech-tag">Data Privacy</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">View Group Site →</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+      <div class="section-label">About Me</div>
+      <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
+        I'm a second-year Computer Science student at AUT, studying Software Development with a minor in AI &amp; Digital Services. My approach to building software is straightforward: identify a real problem, understand it properly, then work backwards to the right solution.
+        <br><br>
+        I'm motivated by the opportunity to create meaningful tools for Māori and Pasifika communities in tech. Whether that's building better infrastructure for Pacific/Maori communities or exploring how AI could support language preservation, I want the work I do to have a connection to something real.
+        <br><br>
+        My long-term goal is to become a solutions architect, I'd like to work by consulting customers and design systems end to end. This role offers a great balance of hard coding and business — something i'd enjoy. To get there I'm developing both technical depth and commercial awareness, with interest in how software engineering intersects with sales, marketing and business strategy.
+        <br><br>
+        Outside of code: I play basketball, volleyball, golf and football. Team sport has taught me how to communicate under pressure, lead without authority and stay accountable when it counts. These are skills that transfer directly to engineering work.
+      </p>
+
+      <div class="about-card" style="margin-bottom: 1.5rem;">
+        <div style="font-weight: 600; margin-bottom: 0.5rem;">Auckland University of Technology</div>
+        <div style="color: var(--text-muted);">Major: Software Development · Minor: AI &amp; Digital Services</div>
+        <div style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.9rem;">Key coursework: Object-Oriented Programming (Java), Operating Systems (Bash), Data Structures &amp; Algorithms (C), Databases (SQL), Web Development (HTML/CSS)</div>
+      </div>
+
+      <div class="skills-row">
+        <span class="skill">Java</span>
+        <span class="skill">Spring Boot</span>
+        <span class="skill">Python</span>
+        <span class="skill">C</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">SQL</span>
+        <span class="skill">HTML / CSS</span>
+        <span class="skill">Bash</span>
+        <span class="skill">REST API Design</span>
+        <span class="skill">Git / GitHub</span>
+        <span class="skill">Arduino / C++</span>
+        <span class="skill">IntelliJ / VSCode</span>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="work" class="fade-in">
+      <div class="section-label">Work Experience</div>
+      <div class="work-item" style="margin-bottom: 1rem;">
+        <div>
+          <div style="font-weight: 600;">Multiskill Team Member</div>
+          <div style="color: var(--accent);">Woolworths · 2022 – Present · Part-time, Auckland</div>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary);">Three years of consistent part-time work alongside a full-time degree. Developed strong communication, time management and adaptability in a high-volume retail environment — including exposure to inventory management and operational workflows at scale.</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <div>
+          <div style="font-weight: 600;">Seasonal Staff</div>
+          <div style="color: var(--accent);">Coolit Ice · Summers 2024 – Present · Casual, Auckland</div>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary);">Fast-paced seasonal production environment. Demonstrated reliability during high-demand periods, performed basic machinery maintenance and troubleshooting to minimise downtime.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extracurricular -->
+    <section id="extracurricular" class="fade-in">
+      <div class="section-label">Extracurricular</div>
+      <div class="about-card">
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.9rem;">
+          <li>
+            <span style="font-weight: 600; color: var(--text-primary);">AUT MAPS (Māori and Pasifika in Tech)</span>
+            <span style="color: var(--accent); font-size: 0.85rem; margin-left: 0.6rem;">Member</span>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.2rem;">Connected with peers across STEM to explore intersections of technology and Pasifika communities.</p>
+          </li>
+          <li>
+            <span style="font-weight: 600; color: var(--text-primary);">AUT Computer Science &amp; Engineering Association (CSEA)</span>
+            <span style="color: var(--accent); font-size: 0.85rem; margin-left: 0.6rem;">Member</span>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.2rem;">Industry events and technical workshops bridging academic and professional skills.</p>
+          </li>
+          <li>
+            <span style="font-weight: 600; color: var(--text-primary);">UOA Devs &amp; UOA Computer Science Society (UOACS)</span>
+            <span style="color: var(--accent); font-size: 0.85rem; margin-left: 0.6rem;">Member</span>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.2rem;">Workshops, networking events and engaging with Auckland's broader student developer community.</p>
+          </li>
+          <li>
+            <span style="font-weight: 600; color: var(--text-primary);">Web Development &amp; Consulting Club</span>
+            <span style="color: var(--accent); font-size: 0.85rem; margin-left: 0.6rem;">Member</span>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.2rem;">Collaborated on web projects; gained exposure to consulting frameworks and client problem-solving.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+      <div class="section-label">Contact</div>
+      <div class="about-card" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="mailto:braydenp114@gmail.com" style="color: var(--text-secondary); text-decoration: none;">braydenp114@gmail.com</a>
+          <a href="https://github.com/braydenp114" target="_blank" style="color: var(--text-secondary); text-decoration: none;">GitHub</a>
+          <a href="https://linkedin.com/in/braydenkahnerupearce" target="_blank" style="color: var(--text-secondary); text-decoration: none;">LinkedIn</a>
+        
+        </div>
+        <div style="color: var(--text-muted); font-size: 0.9rem;">Open to internship conversations, project collaborations, or a chat about basketball.</div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2026 Brayden Pearce · Auckland, NZ</div>
+      <div class="footer-links">
+        <a href="mailto:braydenp114@gmail.com">Email</a>
+        <a href="https://github.com/braydenp114">GitHub</a>
+        <a href="https://linkedin.com/in/braydenkahnerupearce">LinkedIn</a>
+      </div>
+    </footer>
+
   </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects" class="page">
-  <div class="page-wrap" style="padding-top: 110px;">
-    <div class="page-header">
-      <div class="page-label">What I've Built</div>
-      <div class="page-title">Projects</div>
-    </div>
-    <div class="projects-list">
-      <div class="project-row">
-        <div class="project-num">01</div>
-        <div class="project-info">
-          <h3>NBA Stats API</h3>
-          <p>A Spring Boot REST API that proxies the NBA AI Stats service. Exposes a clean endpoint for live standings data with proper authentication headers and environment-based config.</p>
-          <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">REST API</span>
-            <span class="tag">Maven</span>
-            <span class="tag">RapidAPI</span>
-          </div>
-        </div>
-        <div class="project-action">
-          <a href="https://github.com/braydenp114" target="_blank" class="btn-project">View on GitHub</a>
-        </div>
-      </div>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-      <div class="project-row">
-        <div class="project-num">02</div>
-        <div class="project-info">
-          <h3>Portfolio Site</h3>
-          <p>This site. Built from scratch using plain HTML, CSS and JavaScript with no frameworks. Tab-based navigation, custom layout and no dependencies.</p>
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">GitHub Pages</span>
-          </div>
-        </div>
-        <div class="project-action">
-          <a href="https://github.com/braydenp114" target="_blank" class="btn-project">View on GitHub</a>
-        </div>
-      </div>
-
-      <div class="project-row wip">
-        <div class="project-num">03</div>
-        <div class="project-info">
-          <h3>Next Project</h3>
-          <p>In progress. Added here once it ships.</p>
-          <div class="tags"><span class="tag">In Progress</span></div>
-        </div>
-        <div class="project-action"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="page">
-  <div class="page-wrap" style="padding-top: 110px;">
-    <div class="page-header">
-      <div class="page-label">Get In Touch</div>
-      <div class="page-title">Contact</div>
-    </div>
-    <div class="contact-grid">
-      <div>
-        <div class="contact-form-title">Send a message</div>
-        <form onsubmit="handleForm(event)">
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your name" required>
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="your@email.com" required>
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="What would you like to say?" required></textarea>
-          </div>
-          <button type="submit" class="btn-solid" id="submit-btn" style="margin-top: 6px;">Send Message</button>
-        </form>
-      </div>
-      <div>
-        <div class="contact-sidebar-label">Links</div>
-        <div class="contact-link-row">
-          <a href="https://github.com/braydenp114" target="_blank" class="contact-link">
-            GitHub
-            <span class="contact-link-arrow">&#8599;</span>
-          </a>
-        </div>
-        <div class="availability-box">
-          <div class="avail-label">Availability</div>
-          <p class="avail-text">Open to internships and freelance work. Based in New Zealand.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-name">Brayden</div>
-  <div class="footer-copy">&copy; 2026</div>
-</footer>
-
-<script>
-  function show(id, btn) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    if (btn) btn.classList.add('active');
-    window.scrollTo(0, 0);
-  }
-
-  function handleForm(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    const orig = btn.textContent;
-    btn.textContent = 'Sent';
-    btn.disabled = true;
-    btn.style.background = '#1a1a1a';
-    btn.style.color = '#666';
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.disabled = false;
-      btn.style.background = '';
-      btn.style.color = '';
-      e.target.reset();
-    }, 3000);
-  }
-</script>
-
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
