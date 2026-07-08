@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brayden Pearce — Software Engineer</title>
-  <meta name="description" content="Second-year CS student at AUT. Building backend systems, hardware projects and exploring game dev." />
+  <title>Learning Journey — Brayden Peni</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -19,13 +18,7 @@
       --text-secondary: #c0c0c0;
       --text-muted: #8a8a8a;
       --accent: #f97316;
-      --accent-glow: rgba(249, 115, 22, 0.4);
-      --card-blur: 20px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
     }
-
-    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -37,29 +30,23 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navbar - Liquid Glass Effect */
     .navbar {
       position: sticky;
-      top: 20px;
+      top: 0;
       z-index: 100;
-      max-width: 900px;
-      margin: 0 auto 2rem auto;
-      padding: 0.85rem 2rem;
+      width: 100%;
+      padding: 0.85rem 4rem;
       background: var(--bg-glass);
       backdrop-filter: blur(12px) saturate(180%);
-      -webkit-backdrop-filter: blur(12px) saturate(180%);
-      border: 1px solid var(--border-glass);
-      border-radius: 60px;
+      border-bottom: 1px solid var(--border-glass);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
 
     .nav-logo {
       font-size: 1.2rem;
       font-weight: 600;
-      letter-spacing: -0.3px;
       background: linear-gradient(135deg, #fff, #f97316);
       -webkit-background-clip: text;
       background-clip: text;
@@ -67,215 +54,91 @@
       text-decoration: none;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
-    /* Main Container */
     .container {
-      max-width: 900px;
+      width: 100%;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 4rem;
     }
 
-    section {
-      padding: 5rem 0;
+    .page-header {
+      padding: 4rem 0 2rem 0;
+      border-bottom: 1px solid var(--border-glass);
+      margin-bottom: 4rem;
     }
 
-    /* Section Headers */
     .section-label {
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 2rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 3rem 0 1rem 0;
-      text-align: left;
-    }
-
-    .availability {
-      font-size: 1rem;
-      color: var(--accent);
       margin-bottom: 1rem;
-      font-weight: 500;
     }
 
-    .hero h1 {
+    .page-header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 5rem);
+      font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 500;
       line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 i {
-      font-style: italic;
-      color: var(--text-secondary);
-      font-weight: 400;
-    }
-
-    .hero-desc {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      max-width: 75%;
-      margin-bottom: 2rem;
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.8rem;
-      border-radius: 40px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary:hover {
-      background: #ea580c;
-      transform: scale(1.02);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid var(--border-glass);
-      padding: 0.8rem 1.8rem;
-      border-radius: 40px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: var(--accent);
-    }
-
-    /* Project Cards - Glassmorphism */
-    .project-card {
-      background: var(--bg-glass);
-      backdrop-filter: blur(var(--card-blur)) saturate(180%);
-      -webkit-backdrop-filter: blur(var(--card-blur)) saturate(180%);
-      border: 1px solid var(--border-glass);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      transition: transform 0.25s ease, border-color 0.2s;
-      margin-bottom: 2rem;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
       margin-bottom: 1rem;
     }
 
-    .project-title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #fff, #ccc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .page-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 60%;
     }
 
-    .status {
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.3rem 0.8rem;
-      border-radius: 40px;
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 6rem;
     }
 
-    .status-active { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
-    .status-learning { background: rgba(249, 115, 22, 0.2); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
-
-    .project-tech {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin: 1.5rem 0;
-    }
-
-    .tech-tag {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.75rem;
-      background: rgba(255,255,255,0.05);
-      border-radius: 40px;
-      color: var(--text-muted);
-    }
-
-    .project-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .project-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    /* About & Work Cards */
-    .about-card, .work-item {
-      background: rgba(20, 20, 20, 0.6);
-      backdrop-filter: blur(4px);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
+    .course-card {
+      background: var(--bg-glass);
       border: 1px solid var(--border-glass);
+      border-radius: 6px;
+      padding: 2rem;
+      transition: border-color 0.2s;
     }
 
-    .skills-row {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
+    .course-card:hover { border-color: var(--accent); }
+
+    .course-code {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
     }
 
-    .skill {
-      background: rgba(255,255,255,0.05);
-      border-radius: 40px;
-      padding: 0.5rem 1.2rem;
-      font-size: 0.85rem;
-      transition: all 0.2s;
+    .course-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
     }
 
-    .skill:hover {
-      background: var(--accent);
-      color: black;
+    .course-body {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .year-label {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-glass);
     }
 
     footer {
@@ -284,273 +147,159 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin-left: 2rem;
-    }
+    .footer-links a { color: var(--text-muted); text-decoration: none; margin-left: 2rem; }
 
-    /* Fade In Animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 700px) {
-      .container { padding: 0 1.2rem; }
-      .navbar { margin: 1rem; padding: 0.8rem 1.2rem; }
-      .nav-links { gap: 1.2rem; }
-      .hero-desc { max-width: 100%; }
-      .project-title { font-size: 1.4rem; }
+    @media (max-width: 900px) {
+      .container { padding: 0 1.5rem; }
+      .navbar { padding: 0.8rem 1.5rem; }
+      .course-grid { grid-template-columns: 1fr; }
+      .page-header p { max-width: 100%; }
     }
   </style>
 </head>
 <body>
 
   <div class="navbar">
-    <a href="#" class="nav-logo">Brayden Pearce</a>
+    <a href="index.html" class="nav-logo">Brayden Peni</a>
     <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#extracurricular">Extracurricular</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="learning.html" style="color: var(--accent);">Learning</a></li>
       <li><a href="brayden_cv.pdf" download>CV</a></li>
     </ul>
   </div>
 
   <div class="container">
 
-    <section class="hero fade-in">
-      <div class="availability">Actively seeking internships for 2026</div>
-      <h1>Brayden Pearce<br><i>Software Engineering</i></h1>
-      <p class="hero-desc">
-        Second-year CS student at AUT. Building a strong foundation in full-stack development and business analysis with a long-term goal in solutions architecture.
-      </p>
-      <div class="btn-row">
-        <a href="#projects" class="btn-primary">View my work</a>
-        <a href="brayden_cv.pdf" download class="btn-secondary">Download CV</a>
+    <div class="page-header">
+      <div class="section-label">Academic Journey</div>
+      <h1>What I Have Been Learning</h1>
+      <p>A breakdown of every course I have studied at AUT since 2025, what it covered, and how it connects to what I am building toward.</p>
+    </div>
+
+    <div style="margin-bottom: 3rem;">
+      <div class="year-label">Year 1 — 2025 · Foundation</div>
+      <div class="course-grid">
+
+        <div class="course-card">
+          <div class="course-code">COMP500</div>
+          <div class="course-title">Programming Concepts and Techniques</div>
+          <div class="course-body">This was the starting point. Before this course I had no formal programming experience, and by the end I was writing, testing, and debugging programs in C from scratch. The course covered the fundamentals that every software engineer relies on: sequence, selection, iteration, functions, and how to write code that is readable and maintainable, not just functional. What stuck with me most was the discipline of thinking through a problem before touching the keyboard. That process of breaking a complex task into smaller logical steps is something I now do instinctively, whether I am writing a Lambda function in Python or planning an event for CSEA.</div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-code">COMP501</div>
+          <div class="course-title">Computing Technology in Society</div>
+          <div class="course-body">This course asked questions that most computing students do not think about until much later: who does technology actually serve, what are the ethical responsibilities of the people who build it, and what happens when systems fail the communities they were designed to help? Coming from a Māori and Pacific background, these questions were not abstract. Technology has historically been built without people like me in the room. COMP501 gave me a framework for thinking about that gap and for understanding what it means to build something that genuinely serves people rather than just solving a technical problem on paper.</div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-code">COMP503</div>
+          <div class="course-title">Object Oriented Programming</div>
+          <div class="course-body">This is the course that unlocked serious programming for me. Moving from procedural C into object oriented thinking in Java changed how I understood software at a structural level. Classes, objects, inheritance, encapsulation, polymorphism: these are not just programming concepts, they are a way of modelling the real world in code. Every complex system is built from components that interact, and OOP gives you the language to design those interactions deliberately. CourtVision, the NBA Statistics API I built in my own time using Java and Spring Boot, is a direct extension of what I learned here.</div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-code">COMP507</div>
+          <div class="course-title">IT Project Management</div>
+          <div class="course-body">Most people overlook this course as a soft skills paper. I did not. Understanding how software projects are planned, scoped, staffed, and delivered is directly relevant to what a solutions architect does day to day. This course introduced me to Agile methodologies, project lifecycle management, stakeholder communication, and risk assessment. The connection between this and my Woolworths experience was immediate: I had been managing informal project timelines, coordinating people, and handling unexpected problems for years without the vocabulary to describe it. COMP507 gave me that vocabulary.</div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-code">COMP508</div>
+          <div class="course-title">Database System Design</div>
+          <div class="course-body">Data is at the centre of every system worth building, and this course taught me how to design the structures that hold it. Relational database theory, entity relationship modelling, normalisation, and SQL: these are the foundations that sit underneath every application a user interacts with. When I set up DynamoDB for SeismicStream, the decisions I made about how to structure the data and what to use as a partition key were informed by principles I first encountered in COMP508. Understanding how data is organised at rest makes you a significantly better developer.</div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-code">COMP517</div>
+          <div class="course-title">Data Analysis</div>
+          <div class="course-body">This course sits at the boundary between statistics and computing, and for someone with an AI minor it is foundational. COMP517 introduced statistical thinking: how to interpret data, identify patterns, handle variability, and draw conclusions that are actually supported by evidence. In an industry where everyone talks about data-driven decision making, most people have a surface level understanding of what that actually means. This course pushed me to go deeper, to understand the difference between correlation and causation, and to be sceptical of conclusions that look clean.</div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-code">MATH503</div>
+          <div class="course-title">Mathematics for Computing</div>
+          <div class="course-body">I got an A- in this course and it is one I am genuinely proud of. Discrete mathematics is not glamorous but it is the rigour underneath everything in computing: logic, set theory, probability, combinatorics, graph theory. These concepts underpin algorithms, cryptography, database theory, and AI systems. Understanding why an algorithm behaves the way it does at scale requires this foundation. It is also the course that convinced me I could handle the mathematical side of this field, which matters when you are considering a career path that sits at the intersection of engineering and commercial strategy.</div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-code">DIGD507</div>
+          <div class="course-title">Mahitahi / Collaborative Practices</div>
+          <div class="course-body">This course was about something that technical curricula rarely address directly: how to work with other people. Collaborative design practices, communication across disciplines, giving and receiving feedback, and understanding the human context behind a technical brief. For me this connected deeply to my Pacific values around collective effort and community contribution. The skills from this course are ones I use constantly: in team environments at Woolworths, in organising CSEA events, and in the tech communities I am part of across Auckland.</div>
+        </div>
+
       </div>
-    </section>
+    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="fade-in">
-      <div class="section-label">Featured Projects</div>
+    <div style="margin-bottom: 3rem;">
+      <div class="year-label">Year 2 Semester 1 — 2025 · Systems Thinking</div>
+      <div class="course-grid">
 
-      <!-- NBA Stats API / CourtVision -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">NBA Stats API — CourtVision</div>
-          <div class="status status-active">In Progress · 2026</div>
+        <div class="course-card">
+          <div class="course-code">COMP604</div>
+          <div class="course-title">Operating Systems</div>
+          <div class="course-body">How computers actually manage memory, processes, CPU scheduling, and file systems. In plain terms: why software sometimes crashes, how servers handle multiple requests at once, and why cloud infrastructure is designed the way it is. This course gave me a mental model for what is happening underneath the code I write, which directly informed how I think about serverless functions and resource management in AWS. Understanding the OS layer makes you a better cloud engineer because you stop treating infrastructure as magic.</div>
         </div>
-        <p><strong>The Problem:</strong> Most NBA stat sites make player comparisons unnecessarily cumbersome with too many page loads, inconsistent data formats and no clean API layer to build on top of.</p>
-        <p style="margin-top:0.75rem"><strong>My Approach:</strong> Built a REST API using Java and Spring Boot that integrates with the API-NBA endpoint to serve live standings, team statistics and head-to-head player comparisons. The backend handles data normalisation, response caching to respect API rate limits and graceful fallback for missing fields across different endpoints.</p>
-        <p style="margin-top:0.75rem"><strong>Challenges:</strong> The API-NBA data isn't structured for direct comparison — player IDs need matching across endpoints and certain stat categories are inconsistently populated depending on the season. Writing custom mapping logic to handle these cases cleanly was the core engineering problem.</p>
-        <p style="margin-top:0.75rem"><strong>What's next:</strong> A team comparison dashboard and a weighted "GOAT score" feature that lets you define which stats matter most to you.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">Spring Boot</span>
-          <span class="tech-tag">REST API Design</span>
-          <span class="tech-tag">API-NBA</span>
-          <span class="tech-tag">Caching</span>
+
+        <div class="course-card">
+          <div class="course-code">COMP610</div>
+          <div class="course-title">Data Structures and Algorithms</div>
+          <div class="course-body">How to write efficient code. HashMaps, trees, graphs, sorting algorithms, recursion, and time complexity analysis. I scored 100/100 on Assignment 1 which showed me I understood this material when I engaged with it seriously. The exam was harder and the final grade reflected that. What I took from this course is not just the algorithms themselves but the habit of asking why: why is this approach faster, what happens at scale, and what are the tradeoffs. That question drives how I approach every engineering problem now.</div>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/braydenp114" class="project-link">View GitHub →</a>
+
+        <div class="course-card">
+          <div class="course-code">INFS603</div>
+          <div class="course-title">Needs Analysis, Acquisition and Training</div>
+          <div class="course-body">How organisations identify what they actually need from a technology system before building or buying it. Requirements gathering, stakeholder analysis, system evaluation frameworks, and training design. This is the solutions architect mindset in academic form: the gap between what a client says they want and what they actually need is where the real work happens. My B+ result here reflected genuine engagement with the material because it connects directly to the commercial side of technology that I want to work in.</div>
         </div>
+
+        <div class="course-card">
+          <div class="course-code">COMP613</div>
+          <div class="course-title">Combinatorics and Graph Theory</div>
+          <div class="course-body">Graph theory, combinatorial reasoning, and the mathematical foundations of computer science. This was the hardest course of my degree so far and my result reflected that. What I learned from it was less about the content and more about understanding where my limits are and what happens when I cannot connect a subject to something concrete. It has made me more deliberate about how I approach abstract material: I now look for the application before trying to understand the theory.</div>
+        </div>
+
       </div>
+    </div>
 
-      <!-- Personal Portfolio Website -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">Personal Portfolio Website</div>
-          <div class="status status-active">Completed · 2026</div>
+    <div style="margin-bottom: 6rem;">
+      <div class="year-label">Year 2 Semester 2 — 2026 · In Progress</div>
+      <div class="course-grid">
+
+        <div class="course-card">
+          <div class="course-code">COMP603</div>
+          <div class="course-title">Program Design and Construction</div>
+          <div class="course-body">Design patterns, software architecture, and how to write code that is maintainable at scale. This course is teaching me the difference between code that works and code that can be understood, extended, and debugged by someone else six months later. That distinction matters enormously in professional software engineering where you are almost never the only person working on a system.</div>
         </div>
-        <p><strong>Overview:</strong> Designed and built this site from scratch using HTML, CSS, and JavaScript with no frameworks or templates. The goal was to make unique design and layout decision, building a consistent visual system. Every design decision was deliberate meaning no templates, just references turned into something original.</p>
-        <p style="margin-top:0.75rem"><strong>Technical focus:</strong> CSS custom properties for a consistent design system, glassmorphism effects using <code>backdrop-filter</code>, an Intersection Observer for scroll-triggered animations and fully responsive layout from mobile up. Cross-browser compatibility was tested throughout.</p>
-        <p style="margin-top:0.75rem"><strong>Outcome:</strong> A clean, fast and smooth portfolio that reflects how I approach UI. Aesthetically pleasing, intentional, minimal and maintainable.</p>
-        <div class="project-tech">
-          <span class="tech-tag">HTML5</span>
-          <span class="tech-tag">CSS3</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Responsive Design</span>
-          <span class="tech-tag">Intersection Observer API</span>
+
+        <div class="course-card">
+          <div class="course-code">COMP602</div>
+          <div class="course-title">Software Development Practice</div>
+          <div class="course-body">The professional practices of software development: version control workflows, testing methodologies, CI/CD, code review, and Agile in practice rather than in theory. Everything I have been doing informally with SeismicStream and CourtVision, this course is giving me the formal vocabulary and structure for. It is making me a more disciplined engineer.</div>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/braydenp114" class="project-link">View GitHub →</a>
+
+        <div class="course-card">
+          <div class="course-code">COMP607</div>
+          <div class="course-title">Information Security Technologies</div>
+          <div class="course-body">Encryption, identity and access management, threat modelling, and secure system design. There is direct overlap with my AWS Cloud Practitioner certification content, particularly around IAM policies and the shared responsibility model. Security is not an add-on to good architecture, it is part of the design from the start. This course is reinforcing that principle in both the theory and the practical assignments.</div>
         </div>
+
+        <div class="course-card">
+          <div class="course-code">INFS502</div>
+          <div class="course-title">Digital Services in Information Technology</div>
+          <div class="course-body">How digital services are designed, delivered, and managed commercially. This is the most directly relevant course to my Digital Services minor and to my interest in the business side of technology. Understanding how a digital product moves from idea to market, how it is priced, how it scales, and how it is supported feeds directly into the solutions architect role I am working toward.</div>
+        </div>
+
       </div>
-
-      <!-- TCS34725 RGB Colour Sensor -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">TCS34725 RGB Colour Sensor</div>
-          <div class="status status-active">High School · 2022</div>
-        </div>
-        <p><strong>Overview:</strong> Programmed an Arduino to interface with the TCS34725 colour sensor over I2C using the Wire.h library. The sensor reads real-time RGB values and outputs them to the Serial Monitor as objects are presented to it.</p>
-        <p style="margin-top:0.75rem"><strong>Technical challenge:</strong> Ambient light introduced significant noise into the readings. I learned to calibrate the sensor establishing a baseline, adjusting integration time and leveraging the built-in IR filter. I was able to get reliable, repeatable results as blue returned roughly R24, G64, B155; green R67, G111, B80; red R145, G42, B38.</p>
-        <p style="margin-top:0.75rem"><strong>What I took from it:</strong> A practical understanding of low-level hardware communication, sensor calibration and how software and physical components interact. Fundamentals that still inform how I think about systems.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Arduino (C++)</span>
-          <span class="tech-tag">I2C / Wire.h</span>
-          <span class="tech-tag">Sensor Calibration</span>
-          <span class="tech-tag">Embedded Systems</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Watch Demo Video →</a>
-        </div>
-      </div>
-
-      <!-- 2D Volleyball Game -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">2D Volleyball Game</div>
-          <div class="status status-learning">In Development</div>
-        </div>
-        <p><strong>Goal:</strong> Build a browser-based 2D game in vanilla JavaScript to develop a solid understanding of game loops, physics and rendering from first principles.</p>
-        <p style="margin-top:0.75rem"><strong>Current state:</strong> Core limb and ball physics are working: collision detection, velocity and angle-based reflection. Currently iterating on a jump and spike mechanic that needs to feel natural before I move on.</p>
-        <p style="margin-top:0.75rem"><strong>What I'm developing:</strong> <code>requestAnimationFrame</code> for frame-rate-independent animation, separating game logic from the render loop and the vector maths behind 2D collision response. Each problem I solve here feeds directly into how I reason about state and timing in backend systems too.</p>
-        <div class="project-tech">
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">HTML Canvas</span>
-          <span class="tech-tag">Game Physics</span>
-          <span class="tech-tag">requestAnimationFrame</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Play Alpha Demo →</a>
-          <a href="https://github.com/braydenp114" class="project-link">View on GitHub →</a>
-        </div>
-      </div>
-
-      <!-- Bionic Integration Group Project -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">Bionic Integration: Ethics &amp; Opportunity</div>
-          <div class="status status-active">Completed · Team Project</div>
-        </div>
-        <p><strong>Context:</strong> A team research project for my Technology in Society class. We investigated bionic integration as an emerging technology weighing both its technical feasibility and its broader societal implications.</p>
-        <p style="margin-top:0.75rem"><strong>My contribution:</strong> Built the team's HTML/CSS presentation website and led the research into the technical architecture of modern bionic limbs, focusing on the data privacy implications of prosthetics that collect continuous usage data.</p>
-        <p style="margin-top:0.75rem"><strong>Collaboration:</strong> My first real multi-person Git workflow. We worked through merge conflicts early on and established a feature-branch process that kept things clean for the rest of the project. The technical depth of our research was recognised with a top grade.</p>
-        <div class="project-tech">
-          <span class="tech-tag">HTML5 &amp; CSS3</span>
-          <span class="tech-tag">Git Collaboration</span>
-          <span class="tech-tag">Technical Research</span>
-          <span class="tech-tag">Data Privacy</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">View Group Site →</a>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="fade-in">
-      <div class="section-label">About Me</div>
-      <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
-        I'm a second-year Computer Science student at AUT, studying Software Development with a minor in AI &amp; Digital Services. My approach to building software is straightforward: identify a real problem, understand it properly, then work backwards to the right solution.
-        <br><br>
-        I'm motivated by the opportunity to create meaningful tools for Māori and Pasifika communities in tech. Whether that's building better infrastructure for Pacific/Maori communities or exploring how AI could support language preservation, I want the work I do to have a connection to something real.
-        <br><br>
-        My long-term goal is to become a solutions architect, I'd like to work by consulting customers and design systems end to end. This role offers a great balance of hard coding and business — something i'd enjoy. To get there I'm developing both technical depth and commercial awareness, with interest in how software engineering intersects with sales, marketing and business strategy.
-        <br><br>
-        Outside of code: I play basketball, volleyball, golf and football. Team sport has taught me how to communicate under pressure, lead without authority and stay accountable when it counts. These are skills that transfer directly to engineering work.
-      </p>
-
-      <div class="about-card" style="margin-bottom: 1.5rem;">
-        <div style="font-weight: 600; margin-bottom: 0.5rem;">Auckland University of Technology</div>
-        <div style="color: var(--text-muted);">Major: Software Development · Minor: AI &amp; Digital Services</div>
-        <div style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.9rem;">Key coursework: Object-Oriented Programming (Java), Operating Systems (Bash), Data Structures &amp; Algorithms (C), Databases (SQL), Web Development (HTML/CSS)</div>
-      </div>
-
-      <div class="skills-row">
-        <span class="skill">Java</span>
-        <span class="skill">Spring Boot</span>
-        <span class="skill">Python</span>
-        <span class="skill">C</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">SQL</span>
-        <span class="skill">HTML / CSS</span>
-        <span class="skill">Bash</span>
-        <span class="skill">REST API Design</span>
-        <span class="skill">Git / GitHub</span>
-        <span class="skill">Arduino / C++</span>
-        <span class="skill">IntelliJ / VSCode</span>
-      </div>
-    </section>
-
-    <!-- Work Experience -->
-    <section id="work" class="fade-in">
-      <div class="section-label">Work Experience</div>
-      <div class="work-item" style="margin-bottom: 1rem;">
-        <div>
-          <div style="font-weight: 600;">Multiskill Team Member</div>
-          <div style="color: var(--accent);">Woolworths · 2022 – Present · Part-time, Auckland</div>
-          <p style="margin-top: 0.5rem; color: var(--text-secondary);">Three years of consistent part-time work alongside a full-time degree. Developed strong communication, time management and adaptability in a high-volume retail environment — including exposure to inventory management and operational workflows at scale.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <div>
-          <div style="font-weight: 600;">Seasonal Staff</div>
-          <div style="color: var(--accent);">Coolit Ice · Summers 2024 – Present · Casual, Auckland</div>
-          <p style="margin-top: 0.5rem; color: var(--text-secondary);">Fast-paced seasonal production environment. Demonstrated reliability during high-demand periods, performed basic machinery maintenance and troubleshooting to minimise downtime.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Extracurricular -->
-    <section id="extracurricular" class="fade-in">
-      <div class="section-label">Extracurricular</div>
-      <div class="about-card">
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.9rem;">
-          <li>
-            <span style="font-weight: 600; color: var(--text-primary);">AUT MAPS (Māori and Pasifika in Tech)</span>
-            <span style="color: var(--accent); font-size: 0.85rem; margin-left: 0.6rem;">Member</span>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.2rem;">Connected with peers across STEM to explore intersections of technology and Pasifika communities.</p>
-          </li>
-          <li>
-            <span style="font-weight: 600; color: var(--text-primary);">AUT Computer Science &amp; Engineering Association (CSEA)</span>
-            <span style="color: var(--accent); font-size: 0.85rem; margin-left: 0.6rem;">Member</span>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.2rem;">Industry events and technical workshops bridging academic and professional skills.</p>
-          </li>
-          <li>
-            <span style="font-weight: 600; color: var(--text-primary);">UOA Devs &amp; UOA Computer Science Society (UOACS)</span>
-            <span style="color: var(--accent); font-size: 0.85rem; margin-left: 0.6rem;">Member</span>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.2rem;">Workshops, networking events and engaging with Auckland's broader student developer community.</p>
-          </li>
-          <li>
-            <span style="font-weight: 600; color: var(--text-primary);">Web Development &amp; Consulting Club</span>
-            <span style="color: var(--accent); font-size: 0.85rem; margin-left: 0.6rem;">Member</span>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.2rem;">Collaborated on web projects; gained exposure to consulting frameworks and client problem-solving.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-      <div class="section-label">Contact</div>
-      <div class="about-card" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-          <a href="mailto:braydenp114@gmail.com" style="color: var(--text-secondary); text-decoration: none;">braydenp114@gmail.com</a>
-          <a href="https://github.com/braydenp114" target="_blank" style="color: var(--text-secondary); text-decoration: none;">GitHub</a>
-          <a href="https://linkedin.com/in/braydenkahnerupearce" target="_blank" style="color: var(--text-secondary); text-decoration: none;">LinkedIn</a>
-        
-        </div>
-        <div style="color: var(--text-muted); font-size: 0.9rem;">Open to internship conversations, project collaborations, or a chat about basketball.</div>
-      </div>
-    </section>
+    </div>
 
     <footer>
-      <div>© 2026 Brayden Pearce · Auckland, NZ</div>
+      <div>© 2026 Brayden Peni · Auckland, NZ</div>
       <div class="footer-links">
         <a href="mailto:braydenp114@gmail.com">Email</a>
         <a href="https://github.com/braydenp114">GitHub</a>
@@ -560,17 +309,5 @@
 
   </div>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
