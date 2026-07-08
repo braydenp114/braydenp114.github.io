@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Brayden Pearce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html" class="nav-logo">Brayden Pearce</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="extracurricular.html">Extracurricular</a></li>
+        <li><a href="learning.html">Learning</a></li>
+        <li><a href="brayden_cv.pdf" download>CV</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="page-header fade-in">
+        <div class="section-label">Background</div>
+        <h1>About Me</h1>
+        <p>Who I am, where I am from, and what I am working toward.</p>
+      </div>
+
+      <section class="fade-in">
+        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem">
+          I am a second-year Computer Science student at AUT, studying Software
+          Development with minors in AI and Digital Services. My approach to
+          building software is straightforward: identify a real problem,
+          understand it properly, then work backwards to the right solution.
+          <br /><br />
+          I am proud to be Maori, Samoan and Tongan, with a deep connection to
+          my cultural heritage. I am motivated by the opportunity to create
+          meaningful tools for Maori and Pasifika communities in tech. Whether
+          that is building better infrastructure or exploring how AI could
+          support us in the future, I want the work I do to connect to something
+          real.
+          <br /><br />
+          My long-term goal is solutions architecture: designing systems end to
+          end, consulting with customers and sitting at the intersection of
+          engineering and commercial strategy. To get there I am building
+          technical depth through projects and AWS certification, and commercial
+          awareness through real work experience.
+          <br /><br />
+          Outside of code I play every sport under the sun: basketball,
+          volleyball, motocross, golf, football and rugby just to name a few.
+          Team sport has taught me how to communicate under pressure, lead
+          without authority and stay accountable when it counts. I am also a big
+          fan of chess and strategy games, which I find are a great way to
+          exercise problem-solving in a different context.
+        </p>
+
+        <div class="about-card" style="margin-bottom: 1.5rem">
+          <div style="font-weight: 600; margin-bottom: 0.5rem">
+            Auckland University of Technology
+          </div>
+          <div style="color: var(--text-muted)">
+            Major: Software Development · Minors: AI &amp; Digital Services
+          </div>
+          <div
+            style="
+              color: var(--text-muted);
+              margin-top: 0.4rem;
+              font-size: 0.9rem;
+            "
+          >
+            Key coursework: Object-Oriented Programming (Java), Operating
+            Systems, Data Structures &amp; Algorithms, Databases (SQL),
+            Mathematics for Computing
+          </div>
+        </div>
+
+        <div class="section-label" style="margin-top: 3rem">Skills</div>
+        <div class="skills-row">
+          <span class="skill">Java</span>
+          <span class="skill">Spring Boot</span>
+          <span class="skill">Python</span>
+          <span class="skill">AWS Lambda</span>
+          <span class="skill">DynamoDB</span>
+          <span class="skill">EventBridge</span>
+          <span class="skill">React</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">SQL</span>
+          <span class="skill">HTML / CSS</span>
+          <span class="skill">C</span>
+          <span class="skill">Bash</span>
+          <span class="skill">REST API Design</span>
+          <span class="skill">Git / GitHub</span>
+        </div>
+      </section>
+
+      <footer>
+        <div>© 2026 Brayden Pearce · Auckland, NZ</div>
+        <div class="footer-links">
+          <a href="mailto:braydenp114@gmail.com">Email</a>
+          <a href="https://github.com/braydenp114">GitHub</a>
+          <a href="https://linkedin.com/in/braydenkahnerupearce">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

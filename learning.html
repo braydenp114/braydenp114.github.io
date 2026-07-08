@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Journey — Brayden Pearce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg-dark: #0f0f0f;
+        --bg-glass: rgba(25, 25, 25, 0.65);
+        --border-glass: rgba(255, 255, 255, 0.1);
+        --text-primary: #f8f8f8;
+        --text-secondary: #c0c0c0;
+        --text-muted: #8a8a8a;
+        --accent: #f97316;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        background: var(--bg-dark);
+        background-image: radial-gradient(
+          circle at 20% 30%,
+          rgba(249, 115, 22, 0.08) 0%,
+          rgba(0, 0, 0, 0) 50%
+        );
+        color: var(--text-primary);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        padding: 0.85rem 4rem;
+        background: var(--bg-glass);
+        backdrop-filter: blur(12px) saturate(180%);
+        border-bottom: 1px solid var(--border-glass);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-size: 1.2rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #fff, #f97316);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      .nav-links a.active {
+        color: var(--accent);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 4rem;
+      }
+
+      .page-header {
+        padding: 4rem 0 2rem 0;
+        border-bottom: 1px solid var(--border-glass);
+        margin-bottom: 4rem;
+      }
+
+      .section-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      .page-header h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 500;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+
+      .page-header p {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        max-width: 60%;
+      }
+
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 6rem;
+      }
+
+      .course-card {
+        background: var(--bg-glass);
+        border: 1px solid var(--border-glass);
+        border-radius: 6px;
+        padding: 2rem;
+        transition: border-color 0.2s;
+      }
+
+      .course-card:hover {
+        border-color: var(--accent);
+      }
+
+      .course-code {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .course-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+
+      .course-body {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .year-label {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border-glass);
+      }
+
+      footer {
+        border-top: 1px solid var(--border-glass);
+        padding: 2rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        margin-left: 2rem;
+      }
+
+      @media (max-width: 900px) {
+        .container {
+          padding: 0 1.5rem;
+        }
+        .navbar {
+          padding: 0.8rem 1.5rem;
+        }
+        .course-grid {
+          grid-template-columns: 1fr;
+        }
+        .page-header p {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html" class="nav-logo">Brayden Pearce</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="extracurricular.html">Extracurricular</a></li>
+        <li><a href="learning.html" class="active">Learning</a></li>
+        <li><a href="brayden_cv.pdf" download>CV</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="page-header">
+        <div class="section-label">Academic Journey</div>
+        <h1>What I Have Been Learning</h1>
+        <p>
+          A breakdown of every course I have studied at AUT, what it actually
+          taught me and how it connects to what I am building toward.
+        </p>
+      </div>
+
+      <div style="margin-bottom: 3rem">
+        <div class="year-label">Year 1 · Foundation</div>
+        <div class="course-grid">
+          <div class="course-card">
+            <div class="course-code">COMP500</div>
+            <div class="course-title">Programming Concepts and Techniques</div>
+            <div class="course-body">
+              This was where it all started. I came in with no formal
+              programming background and by the end I was writing, debugging and
+              testing programs in C from scratch. The fundamentals covered here,
+              sequence, selection, iteration and functions, are things I still
+              rely on every time I sit down to build something. What I took from
+              it more than anything was the habit of thinking through a problem
+              properly before touching the keyboard. C was the best language to
+              learn that in because it is unforgiving. You cannot just throw
+              code at the compiler and hope it works. You have to understand
+              what you are doing and that mindset has stuck with me ever since.
+              Having a structure like C which declares variables, types and
+              memory management made me a more deliberate programmer. I still
+              think about what is happening under the hood when I write code in
+              higher level languages.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP501</div>
+            <div class="course-title">Computing Technology in Society</div>
+            <div class="course-body">
+              This one asked questions that had me interested in a computing
+              degree: who does technology actually serve and what happens when
+              it fails the communities it was built for? Coming from a Maori and
+              Pacific background those questions were personal, not theoretical.
+              Technology has largely been built without people like me in the
+              room. COMP501 gave me a framework for thinking about that and it
+              changed how I approach building things. I think about who is on
+              the other end now in a way I did not before. In this course I was
+              able to build my first real project which was a website exhibiting
+              our research on the social impact of bionic integration. This gave
+              me the opportunity to research about prosthetics and robotics,
+              something I have a keen interest in.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP503</div>
+            <div class="course-title">Object Oriented Programming</div>
+            <div class="course-body">
+              This is the course that made programming click at a deeper level.
+              Moving from C into Java and thinking in objects, classes,
+              inheritance and encapsulation changed how I model problems in my
+              head. Every complex system is just components interacting and OOP
+              gives you the language to design those interactions deliberately.
+              My CourtVision project I built outside of class using Java and
+              Spring Boot came directly from what I learned here. It was the
+              first time I felt like I could build something real. Java was
+              another interesting language to learn because it is verbose and
+              strict. It forces you to be deliberate about what you are doing
+              and that is a habit I have carried into every project since. It is
+              somewhat similar to C in that way but it is also more expressive
+              and allows you to build more complex systems. I still use Java for
+              backend development and it is the language I am most comfortable
+              with.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP507</div>
+            <div class="course-title">IT Project Management</div>
+            <div class="course-body">
+              Most students write this one off as a soft skills paper. I did
+              not. A solutions architect does not just design systems, they
+              manage the delivery of them. This course introduced me to Agile,
+              project scoping, stakeholder communication and risk management. A
+              lot of it connected directly to Woolworths where I had been doing
+              informal versions of all of this for years without the vocabulary
+              to describe it. COMP507 gave me that vocabulary and made me better
+              at explaining what I actually do. Unfortunately this was a course
+              that was heavily group reliant and many of my peers did not take
+              it seriously. I ended up doing the majority of the work for my
+              group and that was frustrating but it also gave me a chance to
+              practice leadership and communication in a real context. I learned
+              how to manage expectations, delegate tasks and keep a project on
+              track even when others were not pulling their weight. Those are
+              skills that have been invaluable in both my professional and
+              extracurricular work.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP508</div>
+            <div class="course-title">Database System Design</div>
+            <div class="course-body">
+              Every application worth building has data sitting underneath it
+              and this course taught me how to design that layer properly.
+              Relational databases, SQL, entity relationship modelling and
+              normalisation. When I set up DynamoDB for SeismicStream the
+              decisions I made about partition keys and data structure came from
+              principles I first encountered here. Understanding how data is
+              organised at rest makes you a meaningfully better developer
+              because you stop treating the database as a black box.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP517</div>
+            <div class="course-title">Data Analysis</div>
+            <div class="course-body">
+              This course sits at the boundary between statistics and computing.
+              It introduced me to statistical thinking: how to actually
+              interpret data, spot patterns, handle noise and reach conclusions
+              that the evidence supports. Everyone in tech talks about being
+              data driven but most people have a surface level understanding of
+              what that means. This course pushed me further and it feeds
+              directly into my AI minor and into how I think about the data
+              coming through SeismicStream.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">MATH503</div>
+            <div class="course-title">Mathematics for Computing</div>
+            <div class="course-body">
+              I got an A- here and it is one I am genuinely proud of. Discrete
+              maths is not flashy but it is the rigour underneath almost
+              everything in computing: logic, probability, set theory, graph
+              theory, combinatorics. These concepts underpin algorithms,
+              cryptography and AI systems. It is also the course that showed me
+              I could handle the mathematical side of this field, which matters
+              when your long term goal sits at the intersection of engineering
+              and commercial strategy.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">DIGD507</div>
+            <div class="course-title">Mahitahi / Collaborative Practices</div>
+            <div class="course-body">
+              Technical curricula rarely talk directly about how to work with
+              other people. This one did. Collaborative design,
+              cross-disciplinary communication, giving and receiving feedback
+              and understanding the human context behind a brief. For me it
+              connected to Maori values around collective effort that I grew up
+              with. The skills here are ones I use constantly whether that be at
+              work and across the student tech communities. Being good to work
+              with is underrated in this industry.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 3rem">
+        <div class="year-label">Year 2 Semester 1 · Systems Thinking</div>
+        <div class="course-grid">
+          <div class="course-card">
+            <div class="course-code">COMP604</div>
+            <div class="course-title">Operating Systems</div>
+            <div class="course-body">
+              How computers actually manage memory, processes, CPU scheduling
+              and file systems. Why software crashes, how servers handle
+              multiple requests at once and why cloud infrastructure is designed
+              the way it is. This course gave me a mental model for what is
+              happening underneath the code I write. It directly changed how I
+              think about serverless functions and resource management in AWS.
+              Understanding the OS layer makes you a better cloud engineer
+              because you stop treating infrastructure as magic.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP610</div>
+            <div class="course-title">Data Structures and Algorithms</div>
+            <div class="course-body">
+              HashMaps, trees, graphs, sorting algorithms, recursion and time
+              complexity. I scored top marks on my assignments which showed me
+              what I am capable of when I engage seriously with something. What
+              I took from this course is not just the algorithms but the habit
+              of asking why: why is this approach faster, what happens at scale,
+              what are the tradeoffs. That question comes up in every
+              engineering decision I make now.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">INFS603</div>
+            <div class="course-title">
+              Needs Analysis, Acquisition and Training
+            </div>
+            <div class="course-body">
+              How organisations figure out what they actually need from a
+              technology system before building or buying one. Requirements
+              gathering, stakeholder analysis and system evaluation. This is the
+              solutions architect mindset in academic form. The gap between what
+              a client says they want and what they actually need is where the
+              real work happens. In this course I achieved two A+ grades because
+              this material connects directly to the commercial side of
+              technology that I am working toward and I found it genuinely
+              interesting.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP613</div>
+            <div class="course-title">Combinatorics and Graph Theory</div>
+            <div class="course-body">
+              Graph theory, combinatorial reasoning and the mathematical
+              foundations of computer science. The course covered counting
+              techniques, permutations, combinations, graph traversal algorithms
+              and tree structures. These concepts underpin a lot of what happens
+              in algorithm design and network analysis and understanding them at
+              a theoretical level gives you a different way of thinking about
+              problems involving connections, paths and relationships between
+              data points. This course was challenging but rewarding and it has
+              influenced how I approach problem-solving in both my academic and
+              personal projects.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 6rem">
+        <div class="year-label">Year 2 Semester 2 · In Progress</div>
+        <div class="course-grid">
+          <div class="course-card">
+            <div class="course-code">COMP603</div>
+            <div class="course-title">Program Design and Construction</div>
+            <div class="course-body">
+              Design patterns and software architecture. The difference between
+              code that works and code that can be read, extended and debugged
+              by someone else six months later. That distinction matters more
+              than most students realise early on because in professional
+              engineering you are almost never the only person working on a
+              system. This course is making me a more deliberate developer.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP602</div>
+            <div class="course-title">Software Development Practice</div>
+            <div class="course-body">
+              Version control workflows, testing, CI/CD, code review and Agile
+              in practice rather than in theory. A lot of what I have been doing
+              informally with SeismicStream and CourtVision this course is
+              giving me the formal structure for. It is making the gap between
+              student projects and professional engineering smaller and that is
+              exactly what I need right now.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">COMP607</div>
+            <div class="course-title">Information Security Technologies</div>
+            <div class="course-body">
+              Encryption, identity and access management, threat modelling and
+              secure system design. There is direct overlap with my AWS Cloud
+              Practitioner cert content, particularly around IAM policies and
+              the shared responsibility model. Security is not something you
+              bolt on after the fact. It is part of the architecture from the
+              start and this course is reinforcing that in both the theory and
+              the practical work.
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-code">INFS502</div>
+            <div class="course-title">
+              Digital Services in Information Technology
+            </div>
+            <div class="course-body">
+              How digital services are designed, delivered and managed
+              commercially. How a product moves from idea to market, how it is
+              priced, how it scales and how it is supported. This is the most
+              directly relevant course to my Digital Services minor and to the
+              business side of technology that I want to work in. It connects
+              the technical and commercial thinking that I am trying to bring
+              together in my career.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div>© 2026 Brayden Pearce · Auckland, NZ</div>
+        <div class="footer-links">
+          <a href="mailto:braydenp114@gmail.com">Email</a>
+          <a href="https://github.com/braydenp114">GitHub</a>
+          <a href="https://linkedin.com/in/braydenkahnerupearce">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
