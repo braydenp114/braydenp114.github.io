@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience — Brayden Pearce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html" class="nav-logo">Brayden Pearce</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html" class="active">Experience</a></li>
+        <li><a href="extracurricular.html">Extracurricular</a></li>
+        <li><a href="learning.html">Learning</a></li>
+        <li><a href="brayden_cv.pdf" download>CV</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="page-header fade-in">
+        <div class="section-label">Career</div>
+        <h1>Experience</h1>
+        <p>Three years of real work alongside a full-time degree.</p>
+      </div>
+
+      <section class="fade-in">
+        <div class="work-item" style="margin-bottom: 1rem">
+          <div style="font-weight: 600">Multiskill Team Member</div>
+          <div style="color: var(--accent)">
+            Woolworths · 2022 – Present · Part-time, Auckland
+          </div>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary)">
+            Joined at 15 after being recognised directly by store leadership.
+            Over the three years I have run departments independently, handled
+            deliveries and invoicing, trained new staff and stepped up to
+            responsibilities typically held by more senior employees.
+          </p>
+        </div>
+        <div class="work-item" style="margin-bottom: 1rem">
+          <div style="font-weight: 600">NZQA Exam Supervisor</div>
+          <div style="color: var(--accent)">Pakuranga College · 2023</div>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary)">
+            I supervised multiple exams and led a three-person team overseeing
+            formal NZQA examination for over 80 students in one sitting. I was
+            responsible for exam integrity, student compliance and incident
+            management.
+          </p>
+        </div>
+        <div class="work-item">
+          <div style="font-weight: 600">Seasonal Staff</div>
+          <div style="color: var(--accent)">
+            Coolit Ice · Summers 2024 – Present · Casual, Auckland
+          </div>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary)">
+            Fast-paced seasonal production environment. Demonstrated reliability
+            during high-demand periods and performed basic machinery maintenance
+            to minimise downtime.
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <div>© 2026 Brayden Pearce · Auckland, NZ</div>
+        <div class="footer-links">
+          <a href="mailto:braydenp114@gmail.com">Email</a>
+          <a href="https://github.com/braydenp114">GitHub</a>
+          <a href="https://linkedin.com/in/braydenkahnerupearce">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

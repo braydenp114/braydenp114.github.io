@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — Brayden Pearce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html" class="nav-logo">Brayden Pearce</a>
+      <ul class="nav-links">
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="extracurricular.html">Extracurricular</a></li>
+        <li><a href="learning.html">Learning</a></li>
+        <li><a href="brayden_cv.pdf" download>CV</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="page-header fade-in">
+        <div class="section-label">Work</div>
+        <h1>Projects</h1>
+        <p>Things I have built, why I built them and what I learned.</p>
+      </div>
+      <div class="projects-grid fade-in">
+        <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">Seismic Stream</div>
+          <div class="status status-learning">REFINING - 2026</div>
+        </div>
+        <p><strong>The Problem:</strong> GeoNet publishes live NZ earthquake data but there is no clean pipeline that ingests, stores and visualises it in real time.</p>
+        <p style="margin-top:0.75rem"><strong>My Approach:</strong> I built a fully serverless AWS pipeline: a Lambda function pulls from the GeoNet API every 5 minutes via EventBridge, stores events in DynamoDB and a React dashboard displays live quakes on a NZ map with magnitude filtering and significant event alerts.</p>
+        <p style="margin-top:0.75rem"><strong>What I learned:</strong> I put my React skills to test and worked to build a project incorperating AWS. This took a decent amount of time to learn and implement. With it I gained experience with Event-driven architecture, serverless compute, NoSQL data modelling and the reliability tradeoffs that come with real-time pipelines. This is the same pattern that powers IoT systems at scale and I am excited to explore it further in future projects.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">AWS Lambda</span>
+          <span class="tech-tag">DynamoDB</span>
+          <span class="tech-tag">EventBridge</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">GeoNet API</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/braydenp114/seismicstream" class="project-link">View GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">CourtVision - NBA Stats API</div>
+          <div class="status status-learning">REFINING - 2026</div>
+        </div>
+        <p><strong>The Problem:</strong> Most NBA stat sites make player comparisons unnecessarily cumbersome with too many page loads, inconsistent data formats and no clean API layer to build on top of.</p>
+        <p style="margin-top:0.75rem"><strong>My Approach:</strong> Using ESPNS free REST API, I used Java and Spring Boot that integrates with the API-NBA endpoint to serve live standings, team statistics and head-to-head player comparisons. This was built on my prior learning of Java and I'm working to extend it with Spring AI and OpenAI to provide natural language player comparisons. Chatbots are a great way to make data more accessible to the user and I wanted to learn this to use in future.</p>
+        <p style="margin-top:0.75rem"><strong>Challenges:</strong> Player IDs need matching across endpoints and certain stat categories are inconsistently populated depending on the season. Writing custom mapping logic to handle these cases cleanly was the core engineering problem.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">Spring AI</span>
+          <span class="tech-tag">OpenAI</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">API-NBA</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/braydenp114" class="project-link">View GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">Personal Portfolio Website</div>
+          <div class="status status-learning">REFINING - 2025</div>
+        </div>
+        <p><strong>Overview:</strong> Built using HTML, CSS and JavaScript. I used AI tooling throughout the design and development process, which is how I work. The skill was in knowing what to ask for, what to change, and how to make the output actually mine. The final result reflects my own design decisions and aesthetic, not a template.</p>
+        <p style="margin-top:0.75rem"><strong>Technical focus:</strong> CSS custom properties for a consistent design system, glassmorphism effects using backdrop-filter, an Intersection Observer for scroll-triggered animations and fully responsive layout from mobile up.</p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Responsive Design</span>
+          <span class="tech-tag">Intersection Observer API</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/braydenp114" class="project-link">View GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">TCS34725 RGB Colour Sensor</div>
+          <div class="status status-active">COMPLETED · 2024</div>
+        </div>
+        <p><strong>Overview:</strong> Programmed an Arduino to interface with the TCS34725 colour sensor over I2C using the Wire.h library. The sensor reads real-time RGB values and outputs them to the Serial Monitor.</p>
+        <p style="margin-top:0.75rem"><strong>Technical challenge:</strong> Ambient light introduced significant noise into the readings. Learned to calibrate the sensor by adjusting integration time and leveraging the built-in IR filter to get reliable, repeatable results.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Arduino (C++)</span>
+          <span class="tech-tag">I2C / Wire.h</span>
+          <span class="tech-tag">Sensor Calibration</span>
+          <span class="tech-tag">Embedded Systems</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Watch Demo →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">2D Volleyball Game</div>
+          <div class="status status-learning">IN DEVELOPMENT - 2026</div>
+        </div>
+        <p><strong>Goal:</strong> Build a browser-based 2D game in vanilla JavaScript to develop a solid understanding of game loops, physics and rendering from first principles.</p>
+        <p style="margin-top:0.75rem"><strong>Current state:</strong> Core limb and ball physics are working: collision detection, velocity and angle-based reflection. Iterating on a jump and spike mechanic before moving on.</p>
+        <div class="project-tech">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">HTML Canvas</span>
+          <span class="tech-tag">Game Physics</span>
+          <span class="tech-tag">requestAnimationFrame</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Play Alpha →</a>
+          <a href="https://github.com/braydenp114" class="project-link">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">Bionic Integration: Ethics &amp; Opportunity</div>
+          <div class="status status-active">COMPLETED - 2025</div>
+        </div>
+        <p><strong>Context:</strong> A team research project for Technology in Society. We investigated bionic integration as an emerging technology weighing both its technical feasibility and broader societal implications.</p>
+        <p style="margin-top:0.75rem"><strong>My contribution:</strong> Built the team's HTML/CSS presentation website and led research into the technical architecture of modern bionic limbs, focusing on data privacy implications of prosthetics that collect continuous usage data.</p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML5 &amp; CSS3</span>
+          <span class="tech-tag">Git Collaboration</span>
+          <span class="tech-tag">Technical Research</span>
+          <span class="tech-tag">Data Privacy</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">View Group Site →</a>
+        </div>
+      </div>
+
+      <footer>
+        <div>© 2026 Brayden Pearce · Auckland, NZ</div>
+        <div class="footer-links">
+          <a href="mailto:braydenp114@gmail.com">Email</a>
+          <a href="https://github.com/braydenp114">GitHub</a>
+          <a href="https://linkedin.com/in/braydenkahnerupearce">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
