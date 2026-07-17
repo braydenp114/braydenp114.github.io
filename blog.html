@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog — Brayden Pearce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .blog-card {
+        background: var(--bg-glass);
+        border: 1px solid var(--border-glass);
+        border-radius: 6px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        text-decoration: none;
+        display: block;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+      }
+      .blog-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-3px);
+      }
+      .blog-card-date {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.75rem;
+      }
+      .blog-card-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 0.75rem;
+      }
+      .blog-card-desc {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      .blog-card-link {
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-top: 1rem;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html" class="nav-logo">Brayden Pearce</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="extracurricular.html">Extracurricular</a></li>
+        <li><a href="learning.html">Learning</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="brayden_cv.pdf" download>CV</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="page-header fade-in">
+        <div class="section-label">Blog</div>
+        <h1>Thoughts and Experiences</h1>
+        <p>
+          Industry visits, reflections and things I have picked up along the
+          way.
+        </p>
+      </div>
+
+      <section class="fade-in">
+        <a href="bigfour.html" class="blog-card">
+          <div class="blog-card-date">16 July 2026 · Industry Visit</div>
+          <div class="blog-card-title">A Day at the Big Four</div>
+          <div class="blog-card-desc">
+            KPMG, Deloitte, PwC and EY in one day. What I actually took from
+            visiting four of the biggest professional services firms in the
+            world as a second year comsci student.
+          </div>
+          <div class="blog-card-link">Read more →</div>
+        </a>
+
+        <a href="garmin.html" class="blog-card">
+          <div class="blog-card-date">15 July 2026 · Industry Visit</div>
+          <div class="blog-card-title">Visiting Garmin HQ in Grey Lynn</div>
+          <div class="blog-card-desc">
+            What I learned about how a global hardware company actually builds
+            things, from saltwater testing to acoustic rooms to the engineer who
+            listens to music all day.
+          </div>
+          <div class="blog-card-link">Read more →</div>
+        </a>
+      </section>
+
+      <footer>
+        <div>© 2026 Brayden Pearce · Auckland, NZ</div>
+        <div class="footer-links">
+          <a href="mailto:braydenp114@gmail.com">Email</a>
+          <a href="https://github.com/braydenp114">GitHub</a>
+          <a href="https://linkedin.com/in/braydenkahnerupearce">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
