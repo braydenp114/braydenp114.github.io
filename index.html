@@ -1,223 +1,831 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-NZ">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brayden Pearce — Software Engineer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Brayden Pearce</title>
+    <meta name="claude:viewport-fit-sides" content="cover" />
+    <meta name="description" content="Brayden Pearce is a second-year computer science student at AUT in Auckland, building cloud and backend projects on the way to a career in solutions architecture." />
+    <meta name="theme-color" content="#fcfcfb" />
+    <link rel="canonical" href="https://braydenp114.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Brayden Pearce" />
+    <meta property="og:title" content="Brayden Pearce, software development student" />
+    <meta property="og:description" content="Second-year computer science student at AUT building cloud and backend projects. Available for a summer internship, 1 Dec 2026 to 19 Feb 2027." />
+    <meta property="og:url" content="https://braydenp114.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      .hero {
-        padding: 8rem 0 4rem 0;
-      }
-      .availability {
-        font-size: 1rem;
-        color: var(--accent);
-        margin-bottom: 1rem;
-        font-weight: 500;
-      }
-      .hero h1 {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(3rem, 8vw, 6rem);
-        font-weight: 500;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        margin-bottom: 1.5rem;
-      }
-      .hero h1 i {
-        font-style: italic;
-        color: var(--text-secondary);
-        font-weight: 400;
-      }
-      .hero-desc {
-        font-size: 1.2rem;
-        color: var(--text-secondary);
-        line-height: 1.6;
-        max-width: 55%;
-        margin-bottom: 2.5rem;
-      }
-      .btn-row {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-      .nav-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        margin-top: 6rem;
-        padding-bottom: 6rem;
-      }
-      .nav-card {
-        background: var(--bg-glass);
-        border: 1px solid var(--border-glass);
-        border-radius: 6px;
-        padding: 2rem;
-        text-decoration: none;
-        color: var(--text-primary);
-        transition:
-          border-color 0.2s,
-          transform 0.2s;
-      }
-      .nav-card:hover {
-        border-color: var(--accent);
-        transform: translateY(-4px);
-      }
-      .nav-card-label {
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 0.75rem;
-      }
-      .nav-card-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-      .nav-card-desc {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-      }
-      @media (max-width: 900px) {
-        .hero-desc {
-          max-width: 100%;
-        }
-        .nav-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="styles.css?v=9" />
+    <script defer src="main.js?v=2"></script>
+    <script defer src="game.js?v=5"></script>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XRCPGDW0BR"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRCPGDW0BR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-XRCPGDW0BR");
     </script>
   </head>
-  <body>
-    <div class="navbar">
-      <a href="index.html" class="nav-logo">Brayden Pearce</a>
-      <ul class="nav-links">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="extracurricular.html">Extracurricular</a></li>
-        <li><a href="learning.html">Learning</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="brayden_cv.pdf" download>CV</a></li>
-      </ul>
-    </div>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-      <section class="hero fade-in">
-        <div class="availability">Actively seeking internships for 2026</div>
-        <h1>Brayden Pearce<br /><i>Software Engineering</i></h1>
-        <p class="hero-desc">
-          Second-year CS student at AUT. Building a foundation in cloud
-          infrastructure, backend systems and business analysis with a long-term
-          goal in solutions architecture.
-        </p>
-        <div class="btn-row">
-          <a href="projects.html" class="btn-primary">View my work</a>
-          <a href="brayden_cv.pdf" download class="btn-secondary"
-            >Download CV</a
-          >
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <nav class="nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#learning">Learning</a></li>
+            <li><a href="#writing">Writing</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <span class="nav-ring" aria-hidden="true"></span>
+        </nav>
+        <div class="header-actions">
+          <a class="ball-link" href="#free-throws" aria-label="Play free throws" title="Play free throws"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="ball-shade" cx="36%" cy="30%" r="72%"><stop offset="0" stop-color="#f7ab62" /><stop offset=".55" stop-color="#e2772d" /><stop offset="1" stop-color="#a94b16" /></radialGradient><clipPath id="ball-clip"><circle cx="32" cy="32" r="29" /></clipPath></defs><circle class="ball-body" cx="32" cy="32" r="29" /><g class="ball-seams" clip-path="url(#ball-clip)"><path d="M3 32h58M32 3v58M13.5 9.5c8.5 10.5 8.5 34.5 0 45M50.5 9.5c-8.5 10.5-8.5 34.5 0 45" /></g><circle class="ball-edge" cx="32" cy="32" r="29" /></svg></a>
+          <a class="btn" href="brayden_cv.pdf" download>CV <svg class="i i-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg></a>
+          <button class="btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-name">
+        <div class="hero-light" aria-hidden="true">
+          <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="hero-iris" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#7fe3bc" />
+                <stop offset=".38" stop-color="#8db4ff" />
+                <stop offset=".66" stop-color="#bba2ff" />
+                <stop offset="1" stop-color="#ffa3b5" />
+              </linearGradient>
+              <linearGradient id="hero-satin" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e9e9e6" stop-opacity=".9" />
+                <stop offset="1" stop-color="#fcfcfb" stop-opacity="0" />
+              </linearGradient>
+              <filter id="hero-soft" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="16" /></filter>
+              <filter id="hero-glint" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5" /></filter>
+            </defs>
+            <path d="M-80 600 C 280 560 600 520 880 400 S 1280 170 1540 110 L1540 900 L-80 900 Z" fill="url(#hero-satin)" opacity=".55" />
+            <path d="M-80 610 C 280 570 600 530 880 410 S 1280 180 1540 120" fill="none" stroke="url(#hero-iris)" stroke-width="30" opacity=".5" filter="url(#hero-soft)" />
+            <path d="M-80 610 C 280 570 600 530 880 410 S 1280 180 1540 120" fill="none" stroke="url(#hero-iris)" stroke-width="1.2" opacity=".85" />
+            <path d="M-80 650 C 320 610 660 570 930 440 S 1320 220 1540 170" fill="none" stroke="#ffffff" stroke-width="3" opacity=".95" filter="url(#hero-glint)" />
+            <path d="M560 900 C 820 760 1040 600 1540 470" fill="none" stroke="url(#hero-iris)" stroke-width="1" opacity=".3" />
+          </svg>
         </div>
 
-        <div class="nav-grid">
-          <a href="projects.html" class="nav-card">
-            <div class="nav-card-label">Work</div>
-            <div class="nav-card-title">Projects</div>
-            <div class="nav-card-desc">
-              SeismicStream, CourtVision, and everything else I have built.
+        <div class="wrap grid hero-inner">
+          <dl class="hero-meta">
+            <div>
+              <dt class="label">Studying</dt>
+              <dd>Computer Science, Software Development<br />Auckland University of Technology</dd>
             </div>
-          </a>
-          <a href="about.html" class="nav-card">
-            <div class="nav-card-label">Background</div>
-            <div class="nav-card-title">About Me</div>
-            <div class="nav-card-desc">
-              Who I am, where I am from, and what I am working toward.
+            <div>
+              <dt class="label">Based in</dt>
+              <dd>Auckland, Aotearoa New Zealand</dd>
             </div>
-          </a>
-          <a href="experience.html" class="nav-card">
-            <div class="nav-card-label">Career</div>
-            <div class="nav-card-title">Experience</div>
-            <div class="nav-card-desc">
-              Three years at Woolworths and everything in between.
+            <div>
+              <dt class="label">Status</dt>
+              <dd>Seeking a summer internship<br />Available 1 Dec 2026 to 19 Feb 2027</dd>
             </div>
-          </a>
-          <a href="extracurricular.html" class="nav-card">
-            <div class="nav-card-label">Community</div>
-            <div class="nav-card-title">Extracurricular</div>
-            <div class="nav-card-desc">
-              CSEA, MAPS, UOA Devs, sport, and what I do outside of code.
-            </div>
-          </a>
-          <a href="learning.html" class="nav-card">
-            <div class="nav-card-label">Academic</div>
-            <div class="nav-card-title">Learning</div>
-            <div class="nav-card-desc">
-              Every course I have studied at AUT and what I took from it.
-            </div>
-          </a>
-          <a href="blog.html" class="nav-card">
-            <div class="nav-card-label">Writing</div>
-            <div class="nav-card-title">Blog</div>
-            <div class="nav-card-desc">
-              Industry visits, reflections and things I have picked up along the
-              way.
-            </div>
-          </a>
-          <a href="brayden_cv.pdf" download class="nav-card">
-            <div class="nav-card-label">Download</div>
-            <div class="nav-card-title">CV</div>
-            <div class="nav-card-desc">
-              One page summary of everything for recruiters.
-            </div>
-          </a>
+          </dl>
+
+          <h1 class="hero-name" id="hero-name">
+            <span class="line"><span>Brayden</span></span>
+            <span class="line"><span>Pearce</span></span>
+          </h1>
+
+          <div class="hero-foot">
+            <p class="lede">
+              Second-year computer science student at AUT, building a foundation in cloud infrastructure, backend systems and business
+              analysis. The long-term goal is solutions architecture.
+            </p>
+            <ul class="hero-actions">
+              <li>
+                <a href="#work">Selected work <svg class="i i-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg></a>
+              </li>
+              <li>
+                <a href="#contact">Get in touch <svg class="i i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></a>
+              </li>
+              <li>
+                <a href="brayden_cv.pdf" download><span>Download CV <small>PDF</small></span><svg class="i i-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <footer>
-        <div>© 2026 Brayden Pearce · Auckland, NZ</div>
-        <div class="footer-links">
-          <a href="mailto:braydenp114@gmail.com">Email</a>
-          <a href="https://github.com/braydenp114">GitHub</a>
-          <a href="https://linkedin.com/in/braydenkahnerupearce">LinkedIn</a>
-        </div>
-      </footer>
-    </div>
+      <!-- A full-width photo between the introduction and the work -->
+      <figure class="photo-wide">
+        <img
+          src="images/field-lg.webp"
+          srcset="images/field-sm.webp 900w, images/field-lg.webp 1500w"
+          sizes="100vw"
+          width="1500"
+          height="2000"
+          alt="Brayden from behind, walking across a rugby field at dusk with a small child on his shoulders"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="wrap"><span class="label">Off the clock</span></figcaption>
+      </figure>
 
-    <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      document
-        .querySelectorAll(".fade-in")
-        .forEach((el) => observer.observe(el));
-    </script>
+      <!-- Work -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <header class="grid section-head reveal">
+            <p class="label">Work <span class="count">(7)</span></p>
+            <h2 id="work-title">Things I have built, why I built them and what I learned.</h2>
+          </header>
+
+          <article class="grid feature reveal" aria-labelledby="p-seismic">
+            <figure class="plate">
+              <figcaption class="plate-bar"><span>seismicstream / data flow</span><span>AWS, serverless</span></figcaption>
+              <div class="plate-body">
+                <svg class="diagram" viewBox="0 0 560 400" role="img" aria-labelledby="d-seismic-title">
+                  <title id="d-seismic-title">SeismicStream data flow: an EventBridge schedule triggers a Python Lambda every five minutes, which pulls quakes from the GeoNet API and writes them to DynamoDB. A React dashboard reads the stored events.</title>
+                  <defs>
+                    <marker id="ah-s" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-arrow" d="M0 0 8 4 0 8z" /></marker>
+                  </defs>
+                  <!-- One 9 s cycle: the schedule fires (green dot, EventBridge to Lambda), then a quake
+                       travels along the drawn arrows: GeoNet, Lambda, DynamoDB, dashboard. Each path
+                       runs centre to centre, so the dots start and finish hidden under a node. -->
+                  <g>
+                    <circle r="9" fill="#7fe3bc" opacity=".35" />
+                    <circle r="3.5" fill="#3fbf86" />
+                    <animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1" path="M124 72 H436" />
+                  </g>
+                  <g>
+                    <circle r="10" fill="#8db4ff" opacity=".22" />
+                    <circle r="3.5" fill="#6f9cf5" />
+                    <animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1" keyTimes="0;0.3;1" path="M124 208 H216 C276 208 288 92 338 92 H436 V240 C436 300 330 344 222 344 H124" />
+                  </g>
+                  <path class="d-edge" d="M216 72 H338" marker-end="url(#ah-s)" />
+                  <text class="d-label" x="277" y="62" text-anchor="middle">triggers</text>
+                  <path class="d-edge" d="M216 208 C276 208 288 92 338 92" marker-end="url(#ah-s)" />
+                  <text class="d-label" x="296" y="170">pulls</text>
+                  <path class="d-edge" d="M436 104 V170" marker-end="url(#ah-s)" />
+                  <text class="d-label" x="446" y="141">writes</text>
+                  <path class="d-edge" d="M436 240 C436 300 330 344 222 344" marker-end="url(#ah-s)" />
+                  <text class="d-label" x="380" y="306">reads</text>
+
+                  <rect class="d-node" x="32" y="40" width="184" height="64" rx="10" />
+                  <text class="d-name" x="50" y="68">EventBridge</text>
+                  <text class="d-role" x="50" y="88">every 5 minutes</text>
+                  <rect class="d-node" x="344" y="40" width="184" height="64" rx="10" />
+                  <text class="d-name" x="362" y="68">AWS Lambda</text>
+                  <text class="d-role" x="362" y="88">Python ingest</text>
+                  <rect class="d-node" x="32" y="176" width="184" height="64" rx="10" />
+                  <text class="d-name" x="50" y="204">GeoNet API</text>
+                  <text class="d-role" x="50" y="224">live NZ quake feed</text>
+                  <rect class="d-node" x="344" y="176" width="184" height="64" rx="10" />
+                  <text class="d-name" x="362" y="204">DynamoDB</text>
+                  <text class="d-role" x="362" y="224">keyed by quake ID</text>
+                  <rect class="d-node" x="32" y="312" width="184" height="64" rx="10" />
+                  <text class="d-name" x="50" y="340">React dashboard</text>
+                  <text class="d-role" x="50" y="360">map, filters, alerts</text>
+                </svg>
+                <ol class="flow" aria-label="SeismicStream data flow">
+                  <li class="flow-node">EventBridge <span class="mono">every 5 minutes</span></li>
+                  <li class="flow-edge">triggers</li>
+                  <li class="flow-node">AWS Lambda <span class="mono">Python ingest, pulls the GeoNet API</span></li>
+                  <li class="flow-edge">writes</li>
+                  <li class="flow-node">DynamoDB <span class="mono">keyed by quake ID</span></li>
+                  <li class="flow-edge">reads</li>
+                  <li class="flow-node">React dashboard <span class="mono">map, filters, alerts</span></li>
+                </ol>
+              </div>
+            </figure>
+
+            <div class="feature-body">
+              <div class="feature-meta"><span class="label">2026</span><span class="label">Refining</span></div>
+              <h3 id="p-seismic">SeismicStream</h3>
+              <p class="feature-sum">A serverless AWS pipeline that ingests, stores and maps live New Zealand earthquake data.</p>
+              <dl class="case">
+                <div>
+                  <dt class="label">Problem</dt>
+                  <dd>GeoNet publishes live NZ earthquake data, but there was no clean pipeline that ingests, stores and visualises it in real time.</dd>
+                </div>
+                <div>
+                  <dt class="label">Approach</dt>
+                  <dd>
+                    A Lambda function pulls from the GeoNet API every five minutes on an EventBridge schedule and stores events in DynamoDB. Each
+                    record is keyed on its GeoNet quake ID, so a repeat pull updates the same quake instead of duplicating it. A React dashboard
+                    shows live quakes on a map of New Zealand with magnitude filtering and alerts for significant events.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="label">What I learned</dt>
+                  <dd>
+                    This put my React skills to the test alongside AWS, which took real time to learn and implement. I gained experience with
+                    event-driven architecture, serverless compute, NoSQL data modelling and the reliability tradeoffs that come with real-time
+                    pipelines. It is the same pattern that powers IoT systems at scale and I want to explore it further.
+                  </dd>
+                </div>
+              </dl>
+              <p class="stack"><span>Python</span><span>AWS Lambda</span><span>DynamoDB</span><span>EventBridge</span><span>React</span><span>GeoNet API</span></p>
+              <div class="link-row">
+                <a class="link-arrow" href="http://seismicstream-dashboard.s3-website-ap-southeast-2.amazonaws.com" target="_blank" rel="noopener">Live dashboard <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg></a>
+                <a class="link-arrow" href="https://github.com/braydenp114/seismicstream" target="_blank" rel="noopener">Pipeline repo <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg></a>
+                <a class="link-arrow" href="https://github.com/braydenp114/seismicstream-dashboard" target="_blank" rel="noopener">Dashboard repo <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="grid feature is-flipped has-court reveal" aria-labelledby="p-court">
+            <!-- A full court to scale (28 m by 15 m, 48 units per metre), drawn faintly behind the project -->
+            <svg class="court-lines" viewBox="0 0 1400 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect x="28" y="20" width="1344" height="720" />
+              <line x1="700" y1="20" x2="700" y2="740" />
+              <circle cx="700" cy="380" r="86" />
+              <!-- Left end -->
+              <rect x="28" y="262" width="278" height="236" />
+              <path d="M306 294 A86 86 0 0 1 306 466" />
+              <path class="dashed" d="M306 294 A86 86 0 0 0 306 466" />
+              <path d="M28 63 H171 A324 324 0 1 1 171 697 H28" />
+              <path d="M104 320 A60 60 0 0 1 104 440" />
+              <line x1="86" y1="351" x2="86" y2="409" />
+              <circle cx="104" cy="380" r="11" />
+              <!-- Right end -->
+              <rect x="1094" y="262" width="278" height="236" />
+              <path d="M1094 294 A86 86 0 0 0 1094 466" />
+              <path class="dashed" d="M1094 294 A86 86 0 0 1 1094 466" />
+              <path d="M1372 63 H1229 A324 324 0 1 0 1229 697 H1372" />
+              <path d="M1296 320 A60 60 0 0 0 1296 440" />
+              <line x1="1314" y1="351" x2="1314" y2="409" />
+              <circle cx="1296" cy="380" r="11" />
+            </svg>
+            <figure class="plate">
+              <figcaption class="plate-bar"><span>courtvision / request path</span><span>Spring Boot</span></figcaption>
+              <div class="plate-body">
+                <svg class="diagram" viewBox="0 0 560 400" role="img" aria-labelledby="d-court-title">
+                  <title id="d-court-title">CourtVision request path: the browser dashboard calls a REST endpoint on the NbaController, which delegates to the NbaService. The service proxies ESPN's public API, which returns JSON, and calculates advanced metrics such as PER and true shooting percentage.</title>
+                  <defs>
+                    <marker id="ah-c" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-arrow" d="M0 0 8 4 0 8z" /></marker>
+                  </defs>
+                  <g>
+                    <circle r="10" fill="#bba2ff" opacity=".25" />
+                    <circle r="3.5" fill="#9c80f2" />
+                    <animateMotion dur="6s" repeatCount="indefinite" path="M124 72 H436 V208 H124" />
+                  </g>
+                  <path class="d-edge" d="M216 72 H338" marker-end="url(#ah-c)" />
+                  <text class="d-label" x="277" y="62" text-anchor="middle">request</text>
+                  <path class="d-edge" d="M436 104 V170" marker-end="url(#ah-c)" />
+                  <text class="d-label" x="446" y="141">delegates</text>
+                  <path class="d-edge" d="M344 208 H222" marker-end="url(#ah-c)" />
+                  <text class="d-label" x="283" y="198" text-anchor="middle">fetches JSON</text>
+                  <path class="d-edge" d="M436 240 V306" marker-end="url(#ah-c)" />
+                  <text class="d-label" x="446" y="277">calculates</text>
+
+                  <rect class="d-node" x="32" y="40" width="184" height="64" rx="10" />
+                  <text class="d-name" x="50" y="68">Dashboard</text>
+                  <text class="d-role" x="50" y="88">vanilla JS page</text>
+                  <rect class="d-node" x="344" y="40" width="184" height="64" rx="10" />
+                  <text class="d-name" x="362" y="68">NbaController</text>
+                  <text class="d-role" x="362" y="88">7 REST endpoints</text>
+                  <rect class="d-node" x="344" y="176" width="184" height="64" rx="10" />
+                  <text class="d-name" x="362" y="204">NbaService</text>
+                  <text class="d-role" x="362" y="224">ESPN API proxy</text>
+                  <rect class="d-node" x="32" y="176" width="184" height="64" rx="10" />
+                  <text class="d-name" x="50" y="204">ESPN API</text>
+                  <text class="d-role" x="50" y="224">public, no key</text>
+                  <rect class="d-node" x="344" y="312" width="184" height="64" rx="10" />
+                  <text class="d-name" x="362" y="340">Advanced metrics</text>
+                  <text class="d-role" x="362" y="360">PER, TS%, AST/TOV</text>
+                </svg>
+                <ol class="flow" aria-label="CourtVision request path">
+                  <li class="flow-node">Dashboard <span class="mono">vanilla JS page</span></li>
+                  <li class="flow-edge">request</li>
+                  <li class="flow-node">NbaController <span class="mono">7 REST endpoints</span></li>
+                  <li class="flow-edge">delegates</li>
+                  <li class="flow-node">NbaService <span class="mono">ESPN API proxy</span></li>
+                  <li class="flow-edge">fetches JSON</li>
+                  <li class="flow-node">ESPN API <span class="mono">public, no key</span></li>
+                  <li class="flow-edge">calculates</li>
+                  <li class="flow-node">Advanced metrics <span class="mono">PER, TS%, AST/TOV</span></li>
+                </ol>
+              </div>
+            </figure>
+
+            <div class="feature-body">
+              <div class="feature-meta"><span class="label">2026</span><span class="label">Refining</span></div>
+              <h3 id="p-court">CourtVision</h3>
+              <p class="feature-sum">A Java and Spring Boot NBA analytics dashboard with live standings, player and team analytics, a next-game predictor and head-to-head comparisons.</p>
+              <dl class="case">
+                <div>
+                  <dt class="label">Problem</dt>
+                  <dd>Most NBA stat sites make player comparisons cumbersome, with too many page loads, inconsistent data formats and no clean API layer to build on.</dd>
+                </div>
+                <div>
+                  <dt class="label">Approach</dt>
+                  <dd>
+                    A Spring Boot REST proxy (controller, service, ESPN) built on ESPN's free public API, with seven endpoints covering
+                    standings, teams, rosters, player stats, game logs and today's scoreboard. On top of the raw data it calculates PER, true
+                    shooting percentage and assist to turnover ratio, and a weighted-average model projects each team's next game. The
+                    frontend is one vanilla HTML, CSS and JavaScript page served by Spring Boot, with AI-generated insights on why teams win.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="label">Challenge</dt>
+                  <dd>
+                    Some stat categories are populated inconsistently depending on the season, so turning raw numbers into reliable metrics
+                    meant writing custom mapping logic to handle the gaps cleanly.
+                  </dd>
+                </div>
+              </dl>
+              <p class="stack"><span>Java 21</span><span>Spring Boot 3.4</span><span>Maven</span><span>REST</span><span>ESPN API</span><span>Vanilla JS</span></p>
+              <div class="link-row">
+                <a class="link-arrow" href="https://github.com/braydenp114/CourtVision-Project-2026" target="_blank" rel="noopener">Source on GitHub <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <div class="index-block reveal">
+            <div class="index-title">
+              <h3>More projects</h3>
+              <span class="label">Open a row for detail</span>
+            </div>
+            <ul class="index">
+              <li>
+                <details open>
+                  <summary class="ix-row">
+                    <span class="ix-year mono">2026</span>
+                    <span class="ix-title">WeeklyPlanner</span>
+                    <span class="ix-desc">A five-person team app for Software Development Practice that plans your week, then checks what actually happened.</span>
+                    <span class="ix-toggle"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" /></svg></span>
+                  </summary>
+                  <div class="ix-row ix-body">
+                    <p class="stack"><span>TypeScript</span><span>React Native</span><span>Expo</span><span>Firebase</span><span>Cloud Functions</span><span>GitHub Actions</span></p>
+                    <div class="ix-notes">
+                      <p><strong>Overview</strong>A cross-platform planner with day, week and month views, recurring events, travel-time estimates between tasks and planned versus actual analytics. Built with Ryan, Jason, Chamithu and Selah over 174 commits, using feature branches, pull requests and a CI pipeline for linting and type checks.</p>
+                      <p><strong>My contribution</strong>I set up the Expo project and built the grid layout, deadline warnings, planned versus actual tracking and the weekly review analytics screen. I also owned the location features: preset shared locations, arrival detection with tests, arrival notifications, auto-completing tasks on arrival, end-of-block check-ins and a privacy toggle to turn location sharing off and delete its history.</p>
+                      <div class="link-row">
+                        <a class="link-arrow" href="https://github.com/braydenp114/WeeklyPlanner" target="_blank" rel="noopener">Source on GitHub <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary class="ix-row">
+                    <span class="ix-year mono">2026</span>
+                    <span class="ix-title">2D Volleyball Game</span>
+                    <span class="ix-desc">A browser game in vanilla JavaScript, built to learn game loops, physics and rendering from first principles.</span>
+                    <span class="ix-toggle"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" /></svg></span>
+                  </summary>
+                  <div class="ix-row ix-body">
+                    <p class="stack"><span>JavaScript</span><span>HTML Canvas</span><span>Game physics</span><span>requestAnimationFrame</span></p>
+                    <div class="ix-notes">
+                      <p><strong>Status</strong>In development.</p>
+                      <p><strong>Current state</strong>Core limb and ball physics are working: collision detection, velocity and angle-based reflection. I am iterating on a jump and spike mechanic before moving on.</p>
+                      <p class="ix-pending">A playable alpha is not public yet.</p>
+                    </div>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary class="ix-row">
+                    <span class="ix-year mono">2025</span>
+                    <span class="ix-title">This portfolio</span>
+                    <span class="ix-desc">A hand-built site in HTML, CSS and JavaScript, now in its second version.</span>
+                    <span class="ix-toggle"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" /></svg></span>
+                  </summary>
+                  <div class="ix-row ix-body">
+                    <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Intersection Observer</span></p>
+                    <div class="ix-notes">
+                      <p><strong>Overview</strong>I used AI tooling throughout the design and development process, which is how I work. The skill was in knowing what to ask for, what to change and how to make the output actually mine. The result reflects my own design decisions, not a template.</p>
+                      <p><strong>Technical focus</strong>CSS custom properties for a consistent design system, an Intersection Observer for scroll-aware navigation and entrances, native details elements for these expandable rows and a responsive layout from mobile up.</p>
+                    </div>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary class="ix-row">
+                    <span class="ix-year mono">2025</span>
+                    <span class="ix-title">Bionic Integration</span>
+                    <span class="ix-desc">A team research project on the ethics and opportunity of bionic limbs, for Computing Technology in Society.</span>
+                    <span class="ix-toggle"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" /></svg></span>
+                  </summary>
+                  <div class="ix-row ix-body">
+                    <p class="stack"><span>HTML</span><span>CSS</span><span>Git</span><span>Technical research</span><span>Data privacy</span></p>
+                    <div class="ix-notes">
+                      <p><strong>Context</strong>We investigated bionic integration as an emerging technology, weighing its technical feasibility against its broader societal implications.</p>
+                      <p><strong>My contribution</strong>Built the team's presentation website and led research into the technical architecture of modern bionic limbs, focusing on the privacy implications of prosthetics that collect continuous usage data.</p>
+                      <div class="link-row">
+                        <a class="link-arrow" href="https://braydenp114.github.io/Bionic-Integration-Website-2025/" target="_blank" rel="noopener">Live site <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg></a>
+                        <a class="link-arrow" href="https://github.com/braydenp114/Bionic-Integration-Website-2025" target="_blank" rel="noopener">Repo <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary class="ix-row">
+                    <span class="ix-year mono">2024</span>
+                    <span class="ix-title">TCS34725 RGB Colour Sensor</span>
+                    <span class="ix-desc">An Arduino reading real-time RGB values from a colour sensor over I2C.</span>
+                    <span class="ix-toggle"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" /></svg></span>
+                  </summary>
+                  <div class="ix-row ix-body">
+                    <p class="stack"><span>Arduino C++</span><span>I2C, Wire.h</span><span>Sensor calibration</span><span>Embedded</span></p>
+                    <div class="ix-notes">
+                      <p><strong>Overview</strong>Programmed an Arduino to talk to the TCS34725 sensor using the Wire.h library and stream its RGB readings to the Serial Monitor.</p>
+                      <p><strong>Technical challenge</strong>Ambient light added a lot of noise to the readings. I learned to calibrate the sensor by adjusting integration time and using its built-in IR filter to get reliable, repeatable results.</p>
+                    </div>
+                  </div>
+                </details>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <div class="about-head reveal">
+            <p class="label">About</p>
+            <h2 class="about-quote" id="about-title">Identify a real problem, understand it properly, then work backwards to the right solution.</h2>
+          </div>
+
+          <div class="grid about-grid">
+            <figure class="about-photo reveal">
+              <img
+                src="images/falls-sm.webp"
+                srcset="images/falls-sm.webp 900w, images/falls-lg.webp 1449w"
+                sizes="(max-width: 900px) 100vw, 25vw"
+                width="1449"
+                height="960"
+                alt="Four friends seen from behind, standing at the top of a waterfall looking out over misty bush-covered hills"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="about-text reveal">
+              <p>
+                That is how I approach building software. I am a second-year Computer Science student at AUT, majoring in Software
+                Development with minors in Artificial Intelligence and Digital Services.
+              </p>
+              <p>
+                I am proud to be Māori, Samoan and Tongan. I whakapapa to Ngāti Māhanga, part of Waikato Tainui, and my Pasifika roots are in
+                Salelologa and Kolomotu'a. I am motivated by the chance to create meaningful tools for Māori and Pasifika communities in tech.
+                Whether that is building better infrastructure or exploring how AI could support us in the future, I want my work to connect
+                to something real.
+              </p>
+              <p>
+                My long-term goal is solutions architecture: designing systems end to end, consulting with customers and sitting where
+                engineering meets commercial strategy. To get there I am building technical depth through projects and AWS certification,
+                and commercial awareness through real work experience.
+              </p>
+            </div>
+
+            <dl class="facts reveal">
+              <div>
+                <dt class="label">University</dt>
+                <dd>Auckland University of Technology</dd>
+              </div>
+              <div>
+                <dt class="label">Major</dt>
+                <dd>Software Development</dd>
+              </div>
+              <div>
+                <dt class="label">Minors</dt>
+                <dd>Artificial Intelligence<br />Digital Services</dd>
+              </div>
+              <div>
+                <dt class="label">Key coursework</dt>
+                <dd>
+                  Object-Oriented Programming in Java, Operating Systems, Data Structures and Algorithms, Databases and SQL, Mathematics for
+                  Computing
+                </dd>
+              </div>
+            </dl>
+
+            <div class="toolkit reveal">
+              <h3>Toolkit</h3>
+              <dl>
+                <div>
+                  <dt class="label">Languages</dt>
+                  <dd>Java, Python, JavaScript, SQL, C, Bash, HTML and CSS</dd>
+                </div>
+                <div>
+                  <dt class="label">Frameworks</dt>
+                  <dd>Spring Boot, React</dd>
+                </div>
+                <div>
+                  <dt class="label">Cloud</dt>
+                  <dd>AWS Lambda, DynamoDB, EventBridge</dd>
+                </div>
+                <div>
+                  <dt class="label">Practice</dt>
+                  <dd>REST API design, Git and GitHub</dd>
+                </div>
+                <div>
+                  <dt class="label">Working toward</dt>
+                  <dd>AWS Certified Cloud Practitioner <small>in progress</small></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section" id="experience" aria-labelledby="exp-title">
+        <div class="wrap">
+          <header class="grid section-head reveal">
+            <p class="label">Experience</p>
+            <h2 id="exp-title">Four years of real work alongside a full-time degree.</h2>
+          </header>
+          <ol class="timeline reveal">
+            <li class="grid">
+              <p class="t-when mono">2022 to present</p>
+              <div class="t-role">
+                <h3>Multiskill Team Member</h3>
+                <p>Woolworths, Auckland. Part-time</p>
+              </div>
+              <p class="t-desc">
+                Joined at 15 after being recognised directly by store leadership. Over four years I have run departments on my own, handled
+                deliveries and invoicing, trained new staff and taken on responsibilities usually held by more senior employees.
+              </p>
+            </li>
+            <li class="grid">
+              <p class="t-when mono">Summers, 2024 to present</p>
+              <div class="t-role">
+                <h3>Seasonal Staff</h3>
+                <p>Coolit Ice, Auckland. Casual</p>
+              </div>
+              <p class="t-desc">
+                A fast-paced seasonal production environment. I stayed reliable through high-demand periods and carried out basic machinery
+                maintenance to keep downtime low.
+              </p>
+            </li>
+            <li class="grid">
+              <p class="t-when mono">2023</p>
+              <div class="t-role">
+                <h3>NZQA Exam Supervisor</h3>
+                <p>Pakuranga College</p>
+              </div>
+              <p class="t-desc">
+                Supervised multiple exams and led a three-person team overseeing a formal NZQA examination for more than 80 students in one
+                sitting. Responsible for exam integrity, student compliance and incident management.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Sport -->
+      <section class="band" aria-labelledby="sport-title">
+        <div class="wrap">
+          <h2 class="label reveal" id="sport-title">Off the keyboard</h2>
+          <ul class="sports reveal">
+            <li><span>Basketball</span></li>
+            <li><span>Volleyball</span></li>
+            <li><span>Motocross</span></li>
+            <li><span>Golf</span></li>
+            <li><span>Football</span></li>
+            <li><span>Rugby</span></li>
+            <li><span>Snowboarding</span></li>
+            <li><span>Chess</span></li>
+          </ul>
+          <div class="grid band-text reveal">
+            <p>
+              I play every sport under the sun. Team sport has taught me how to communicate under pressure, lead without authority and stay
+              accountable when it counts.
+            </p>
+            <p>
+              I am also a big fan of chess and strategy games. They are a good way to exercise problem-solving in a completely different
+              context.
+            </p>
+          </div>
+
+          <ul class="dock reveal" aria-label="Photos">
+            <li class="tile"><img src="images/snow-sm.webp" width="900" height="900" alt="Snowboarding selfie on a ski field with a friend holding a board behind" loading="lazy" decoding="async" /></li>
+            <li class="tile"><img src="images/football-sm.webp" width="900" height="900" alt="Brayden holding a football trophy with a medal around his neck" loading="lazy" decoding="async" /></li>
+            <li class="tile"><img src="images/arena-sm.webp" width="900" height="900" alt="A packed indoor arena seen from the top row during a Breakers basketball game" loading="lazy" decoding="async" /></li>
+            <li class="tile"><img src="images/handshake-sm.webp" width="900" height="900" alt="Brayden shaking hands with a man in a black t-shirt and pearl necklace at an outdoor event" loading="lazy" decoding="async" /></li>
+            <li class="tile"><img src="images/golf-sm.webp" width="900" height="900" alt="Golf selfie on a sunny fairway, a friend carrying a golf bag and holding up a peace sign" loading="lazy" decoding="async" /></li>
+            <li class="tile"><img src="images/pinnacles-sm.webp" width="900" height="900" alt="Six trampers with packs standing outside Pinnacles Hut, altitude 582 metres" loading="lazy" decoding="async" /></li>
+          </ul>
+
+          <div class="game reveal" id="free-throws">
+            <div class="grid game-head">
+              <h3 class="game-title" id="game-title">Free throws</h3>
+              <p class="game-intro">
+                Take a few shots while you are here. Move to set the arc and click to shoot. The aim line only shows the start of the flight,
+                and every make moves you to a new spot.
+              </p>
+            </div>
+
+            <div class="game-layout">
+              <div class="game-card">
+                <div class="game-hud">
+                  <div><span class="label">Score</span><output id="g-score">0</output></div>
+                  <div><span class="label">Time</span><output id="g-time">45</output></div>
+                  <div><span class="label">Shot</span><output id="g-spot">Free throw, 2 pts</output></div>
+                </div>
+
+                <div class="game-stage" id="g-stage">
+                  <canvas id="g-canvas" width="960" height="680" aria-labelledby="game-title" aria-describedby="g-help"></canvas>
+                  <div class="game-overlay" id="g-start">
+                    <button class="btn btn-solid btn-lg" type="button" id="g-play">Play a round</button>
+                    <p class="game-overlay-note">45 seconds, starting at the free throw line</p>
+                  </div>
+                </div>
+
+                <p class="game-status" id="g-status" role="status" aria-live="polite"></p>
+                <p class="sr-only" id="g-help">Aim with the mouse and click to shoot. On a keyboard, arrow keys change the arc and power, and Space shoots.</p>
+
+                <div class="game-end" id="g-end" hidden>
+                  <p class="game-end-score">You scored <strong id="g-final">0</strong></p>
+                  <form class="game-form" id="g-form" novalidate>
+                    <label class="label" for="g-initials">Your initials</label>
+                    <div class="game-form-row">
+                      <input id="g-initials" name="initials" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Za-z]{3}" aria-describedby="g-msg" required />
+                      <button class="btn btn-solid" type="submit" id="g-save">Save score</button>
+                    </div>
+                    <p class="game-msg" id="g-msg" role="status">Three letters, A to Z.</p>
+                  </form>
+                </div>
+              </div>
+
+              <aside class="leaderboard" aria-labelledby="lb-title">
+                <h4 id="lb-title">Leaderboard</h4>
+                <ol class="lb-list" id="lb-list"></ol>
+                <p class="lb-note" id="lb-note"></p>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community -->
+      <section class="section" id="community" aria-labelledby="com-title">
+        <div class="wrap">
+          <header class="grid section-head reveal">
+            <p class="label">Community</p>
+            <h2 id="com-title">What I do outside of class and why it matters.</h2>
+          </header>
+          <ul class="grid community reveal">
+            <li>
+              <p class="label">Incoming, 2027</p>
+              <h3>CSEA Outreach Executive</h3>
+              <p>Joining the CSEA committee as Outreach Executive for 2027.</p>
+            </li>
+            <li>
+              <p class="label">Māori and Pasifika in Tech</p>
+              <h3>AUT MAPS</h3>
+              <p>Connecting with peers across STEM and exploring where technology meets Pasifika communities.</p>
+            </li>
+            <li>
+              <p class="label">Student developers</p>
+              <h3>UOA Devs and UOACS</h3>
+              <p>Workshops, networking events and engaging with Auckland's wider student developer community.</p>
+            </li>
+            <li>
+              <p class="label">In progress</p>
+              <h3>AWS Cloud Practitioner</h3>
+              <p>Mentored by a Māori engineer at AWS, with a focus on cloud architecture and solutions engineering.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Learning -->
+      <section class="section" id="learning" aria-labelledby="learn-title">
+        <div class="wrap">
+          <header class="grid section-head reveal">
+            <p class="label">Learning <span class="count">(16)</span></p>
+            <h2 id="learn-title">Every course I have studied at AUT and what I took from it.</h2>
+          </header>
+          <div class="grid terms reveal">
+            <div class="term">
+              <h3>Year 1 <span class="label">Foundation</span></h3>
+              <ul>
+                <li><span class="mono">COMP500</span>Programming Concepts and Techniques</li>
+                <li><span class="mono">COMP501</span>Computing Technology in Society</li>
+                <li><span class="mono">COMP503</span>Object Oriented Programming</li>
+                <li><span class="mono">COMP507</span>IT Project Management</li>
+                <li><span class="mono">COMP508</span>Database System Design</li>
+                <li><span class="mono">COMP517</span>Data Analysis</li>
+                <li><span class="mono">MATH503</span>Mathematics for Computing</li>
+                <li><span class="mono">DIGD507</span>Mahitahi: Collaborative Practices</li>
+              </ul>
+            </div>
+            <div class="term">
+              <h3>Year 2, semester 1 <span class="label">Systems</span></h3>
+              <ul>
+                <li><span class="mono">COMP604</span>Operating Systems</li>
+                <li><span class="mono">COMP610</span>Data Structures and Algorithms</li>
+                <li><span class="mono">INFS603</span>Needs Analysis, Acquisition and Training</li>
+                <li><span class="mono">COMP613</span>Combinatorics and Graph Theory</li>
+              </ul>
+            </div>
+            <div class="term">
+              <h3>Year 2, semester 2 <span class="label">Now</span></h3>
+              <ul>
+                <li><span class="mono">COMP603</span>Program Design and Construction</li>
+                <li><span class="mono">COMP602</span>Software Development Practice</li>
+                <li><span class="mono">COMP607</span>Information Security Technologies</li>
+                <li><span class="mono">INFS502</span>Digital Services in IT</li>
+              </ul>
+            </div>
+          </div>
+          <div class="terms-foot reveal">
+            <a class="link-arrow" href="learning.html">Read what each course taught me <svg class="i i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Writing -->
+      <section class="section" id="writing" aria-labelledby="write-title">
+        <div class="wrap">
+          <header class="grid section-head reveal">
+            <p class="label">Writing</p>
+            <h2 id="write-title">Industry visits, reflections and things I have picked up along the way.</h2>
+          </header>
+          <ul class="posts reveal">
+            <li>
+              <a class="post" href="bigfour.html">
+                <span class="label"><time datetime="2026-07-16">16 July 2026</time></span>
+                <h3>A Day at the Big Four</h3>
+                <p>KPMG, Deloitte, PwC and EY in one day. What I actually took from visiting four of the biggest professional services firms in the world as a second-year comp sci student.</p>
+                <svg class="i i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+              </a>
+            </li>
+            <li>
+              <a class="post" href="garmin.html">
+                <span class="label"><time datetime="2026-07-15">15 July 2026</time></span>
+                <h3>Visiting Garmin HQ in Grey Lynn</h3>
+                <p>How a global hardware company actually builds things, from saltwater testing to acoustic rooms to the engineer who listens to music all day.</p>
+                <svg class="i i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="wrap">
+          <div class="grid contact-head reveal">
+            <h2 class="label" id="contact-title">Contact</h2>
+            <p>Open to summer internships from 1 Dec 2026 to 19 Feb 2027, plus projects and conversations. Email is the best way to reach me.</p>
+          </div>
+          <div class="email-row reveal">
+            <a class="email" id="email" href="mailto:braydenp114@gmail.com">braydenp114@gmail.com</a>
+            <button class="btn copy-btn" type="button" data-copy="braydenp114@gmail.com" data-target="#email">
+              <span class="copy-label" aria-live="polite">Copy address</span>
+            </button>
+          </div>
+          <ul class="grid contact-links reveal">
+            <li>
+              <a href="https://linkedin.com/in/braydenkahnerupearce" target="_blank" rel="noopener">
+                <span class="c-name">LinkedIn</span>
+                <span class="mono">in/braydenkahnerupearce</span>
+                <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/braydenp114" target="_blank" rel="noopener">
+                <span class="c-name">GitHub</span>
+                <span class="mono">braydenp114</span>
+                <svg class="i i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="brayden_cv.pdf" download>
+                <span class="c-name">CV</span>
+                <span class="mono">One page, PDF</span>
+                <svg class="i i-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span>© 2026 Brayden Pearce</span>
+        <span>Auckland, Aotearoa New Zealand</span>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
   </body>
 </html>
